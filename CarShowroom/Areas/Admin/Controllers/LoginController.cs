@@ -21,7 +21,7 @@ namespace CarShowroom.Areas.Admin.Controllers
             if (ModelState.IsValid)
             {
                 var dao =new  UserDAO();
-                var result = dao.Login(model.userName, model.passWord);
+                var result = dao.Login(model.userName, Encryption.MD5Hash(model.passWord));
                 if (result)
                 {
                     var user = dao.GetById(model.userName);
