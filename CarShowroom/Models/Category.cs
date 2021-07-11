@@ -15,7 +15,7 @@ namespace Model.EF
         public string name { get; set; }
 
         [StringLength(250)]
-        public string metaTite { get; set; }
+        public string metaTitle { get; set; }
 
         public long? parentID { get; set; }
 

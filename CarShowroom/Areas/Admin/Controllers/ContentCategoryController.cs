@@ -15,6 +15,18 @@ namespace CarShowroom.Areas.Admin.Controllers
         {
             return View();
         }
+        [HttpGet]
+        public ActionResult Create()
+        {
+            return View();
+        }
+
+        public ActionResult Edit(int id)
+        {
+            var category = new ContentCategoryDAO().ViewDetail(id);
+            return View(category);
+        }
+        [HttpPost]
         public ActionResult Create(Category category)
         {
             if (ModelState.IsValid)

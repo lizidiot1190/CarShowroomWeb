@@ -46,6 +46,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Microsoft.CSharp" />
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
@@ -209,6 +215,10 @@
     <Compile Include="Migrations\202107091920206_CreateAllTable3.cs" />
     <Compile Include="Migrations\202107091920206_CreateAllTable3.Designer.cs">
       <DependentUpon>202107091920206_CreateAllTable3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107111507170_update.cs" />
+    <Compile Include="Migrations\202107111507170_update.Designer.cs">
+      <DependentUpon>202107111507170_update.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Category.cs" />
@@ -1911,6 +1921,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
@@ -2093,7 +2104,9 @@
     <Content Include="assets\vendor\jquery\jquery.slim.min.map" />
     <Content Include="Areas\Admin\Views\Shared\_Layouts.cshtml" />
     <Content Include="Areas\Admin\Views\Home\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ContentCategory\Create.cshtml" />
     <Content Include="Areas\Admin\Views\ContentCategory\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ContentCategory\Edit.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2114,17 +2127,12 @@
     </Content>
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
-    <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
-    <Content Include="Views\Home\About.cshtml" />
-    <Content Include="Views\Home\Contact.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
-    <Content Include="Views\Shared\Lockout.cshtml" />
-    <Content Include="Views\Shared\_LoginPartial.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Views\Session\" />
+    <Folder Include="Views\Home\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -2160,6 +2168,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107091920206_CreateAllTable3.resx">
       <DependentUpon>202107091920206_CreateAllTable3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107111507170_update.resx">
+      <DependentUpon>202107111507170_update.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

@@ -1,44 +1,508 @@
-﻿<!DOCTYPE html>
-<html>
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>@ViewBag.Title - My ASP.NET Application</title>
-    @Styles.Render("~/Content/css")
-    @Scripts.Render("~/bundles/modernizr")
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="icon" href="~/assets/img/LOGO_THACO.png ">
+    <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+
+    <title>Thaco Showroom </title>
+
+    <!-- Bootstrap core CSS -->
+    <link href="~/assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="~/assets/css/fontawesome.css">
+    <link rel="stylesheet" href="~/assets/css/style.css">
+    <link rel="stylesheet" href="~/assets/css/owl.css">
 
 </head>
+
 <body>
-    <div class="navbar navbar-inverse navbar-fixed-top">
-        <div class="container">
-            <div class="navbar-header">
-                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
+
+    <!-- ***** Preloader Start ***** -->
+    <div id="preloader">
+        <div class="jumper">
+            <div></div>
+            <div></div>
+            <div></div>
+        </div>
+    </div>
+    <!-- ***** Preloader End ***** -->
+    <!-- Header -->
+    <header class="">
+        <nav class="navbar navbar-expand-lg">
+            <div class="container">
+                <a class="navbar-brand" href="index.html"><h2 style="color: rgb(42, 42, 168);">Thaco <em>ShowRoom</em></h2></a>
+                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
                 </button>
-                @Html.ActionLink("Application name", "Index", "Home", new { area = "" }, new { @class = "navbar-brand" })
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">
+                                Trang chủ
+                                <span class="sr-only">(current)</span>
+                            </a>
+                        </li>
+
+                        <li class="nav-item"><a class="nav-link" href="cars.html">Sản phẩm</a></li>
+
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Nhiều hơn</a>
+
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="blog.html">Tin tức</a>
+                                <a class="dropdown-item" href="team.html">Nhà sáng lập</a>
+                                <a class="dropdown-item" href="testimonials.html">Đánh giá</a>
+                                <a class="dropdown-item" href="terms.html">Điều kiện</a>
+                            </div>
+                        </li>
+
+                        <li class="nav-item"><a class="nav-link" href="about-us.html">Về chúng tôi</a></li>
+
+                        <li class="nav-item"><a class="nav-link" href="contact.html">Liên Hệ Với Chúng Tôi</a></li>
+                    </ul>
+                </div>
             </div>
-            <div class="navbar-collapse collapse">
-                <ul class="nav navbar-nav">
-                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                    <li>@Html.ActionLink("About", "About", "Home")</li>
-                    <li>@Html.ActionLink("Contact", "Contact", "Home")</li>
-                </ul>
-                @Html.Partial("_LoginPartial")
+        </nav>
+    </header>
+
+    <!-- Page Content -->
+    <!-- Banner Starts Here -->
+    <div class="banner header-text">
+        <div class="owl-banner owl-carousel">
+            <div class="banner-item-01">
+                <div class="text-content">
+                    <h4>TÌM XE CỦA BẠN NGAY HÔM NAY!</h4>
+                    <h2>THACO VIỆT NAM</h2>
+                </div>
+            </div>
+            <div class="banner-item-02">
+                <div class="text-content">
+                    <h4>TÌM XE CỦA BẠN NGAY HÔM NAY!</h4>
+                    <h2>THACO VIỆT NAM</h2>
+                </div>
+            </div>
+            <div class="banner-item-03">
+                <div class="text-content">
+                    <h4>TÌM XE CỦA BẠN NGAY HÔM NAY!</h4>
+                    <h2>THACO VIỆT NAM</h2>
+                </div>
             </div>
         </div>
     </div>
-    <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - My ASP.NET Application</p>
-        </footer>
+    <!-- Banner Ends Here -->
+
+    <div class="latest-products">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-heading">
+                        <h2>Xe nổi bật</h2>
+                        <a href="cars.html">Xem thêm <i class="fa fa-angle-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="product-item">
+                        <a href="car-details.html"><img src="assets/images/product-1-370x270.jpg" alt=""></a>
+                        <div class="down-content">
+                            <a href="car-details.html"><h4>Lorem ipsum dolor sit amet, consectetur</h4></a>
+
+                            <h6><small><del> $11199.00</del></small> $11179.00</h6>
+
+                            <p>190 hp &nbsp;/&nbsp; Petrol &nbsp;/&nbsp; 2008 &nbsp;/&nbsp; Used vehicle</p>
+
+                            <small>
+                                <strong title="Author"><i class="fa fa-dashboard"></i> 130 000km</strong> &nbsp;&nbsp;&nbsp;&nbsp;
+                                <strong title="Author"><i class="fa fa-cube"></i> 1800cc</strong>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <strong title="Views"><i class="fa fa-cog"></i> Manual</strong>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="product-item">
+                        <a href="car-details.html"><img src="assets/images/product-2-370x270.jpg" alt=""></a>
+                        <div class="down-content">
+                            <a href="car-details.html"><h4>Lorem ipsum dolor sit amet, consectetur</h4></a>
+
+                            <h6><small><del> $11199.00</del></small> $11179.00</h6>
+
+                            <p>190 hp &nbsp;/&nbsp; Petrol &nbsp;/&nbsp; 2008 &nbsp;/&nbsp; Used vehicle</p>
+
+                            <small>
+                                <strong title="Author"><i class="fa fa-dashboard"></i> 130 000km</strong> &nbsp;&nbsp;&nbsp;&nbsp;
+                                <strong title="Author"><i class="fa fa-cube"></i> 1800cc</strong>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <strong title="Views"><i class="fa fa-cog"></i> Manual</strong>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="product-item">
+                        <a href="car-details.html"><img src="assets/images/product-3-370x270.jpg" alt=""></a>
+                        <div class="down-content">
+                            <a href="car-details.html"><h4>Lorem ipsum dolor sit amet, consectetur</h4></a>
+
+                            <h6><small><del> $11199.00</del></small> $11179.00</h6>
+
+                            <p>190 hp &nbsp;/&nbsp; Petrol &nbsp;/&nbsp; 2008 &nbsp;/&nbsp; Used vehicle</p>
+
+                            <small>
+                                <strong title="Author"><i class="fa fa-dashboard"></i> 130 000km</strong> &nbsp;&nbsp;&nbsp;&nbsp;
+                                <strong title="Author"><i class="fa fa-cube"></i> 1800cc</strong>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <strong title="Views"><i class="fa fa-cog"></i> Manual</strong>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="product-item">
+                        <a href="car-details.html"><img src="assets/images/product-4-370x270.jpg" alt=""></a>
+                        <div class="down-content">
+                            <a href="car-details.html"><h4>Lorem ipsum dolor sit amet, consectetur</h4></a>
+
+                            <h6><small><del> $11199.00</del></small> $11179.00</h6>
+
+                            <p>190 hp &nbsp;/&nbsp; Petrol &nbsp;/&nbsp; 2008 &nbsp;/&nbsp; Used vehicle</p>
+
+                            <small>
+                                <strong title="Author"><i class="fa fa-dashboard"></i> 130 000km</strong> &nbsp;&nbsp;&nbsp;&nbsp;
+                                <strong title="Author"><i class="fa fa-cube"></i> 1800cc</strong>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <strong title="Views"><i class="fa fa-cog"></i> Manual</strong>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="product-item">
+                        <a href="car-details.html"><img src="assets/images/product-5-370x270.jpg" alt=""></a>
+                        <div class="down-content">
+                            <a href="car-details.html"><h4>Lorem ipsum dolor sit amet, consectetur</h4></a>
+
+                            <h6><small><del> $11199.00</del></small> $11179.00</h6>
+
+                            <p>190 hp &nbsp;/&nbsp; Petrol &nbsp;/&nbsp; 2008 &nbsp;/&nbsp; Used vehicle</p>
+
+                            <small>
+                                <strong title="Author"><i class="fa fa-dashboard"></i> 130 000km</strong> &nbsp;&nbsp;&nbsp;&nbsp;
+                                <strong title="Author"><i class="fa fa-cube"></i> 1800cc</strong>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <strong title="Views"><i class="fa fa-cog"></i> Manual</strong>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="product-item">
+                        <a href="car-details.html"><img src="assets/images/product-6-370x270.jpg" alt=""></a>
+                        <div class="down-content">
+                            <a href="car-details.html"><h4>Lorem ipsum dolor sit amet, consectetur</h4></a>
+
+                            <h6><small><del> $11199.00</del></small> $11179.00</h6>
+
+                            <p>190 hp &nbsp;/&nbsp; Petrol &nbsp;/&nbsp; 2008 &nbsp;/&nbsp; Used vehicle</p>
+
+                            <small>
+                                <strong title="Author"><i class="fa fa-dashboard"></i> 130 000km</strong> &nbsp;&nbsp;&nbsp;&nbsp;
+                                <strong title="Author"><i class="fa fa-cube"></i> 1800cc</strong>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <strong title="Views"><i class="fa fa-cog"></i> Manual</strong>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    @Scripts.Render("~/bundles/jquery")
-    @Scripts.Render("~/bundles/bootstrap")
-    @RenderSection("scripts", required: false)
+    <div class="best-features">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-heading">
+                        <h2>Về Chúng Tôi</h2>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="left-content">
+                        <p>Với quan điểm “THACO thể hiện trách nhiệm xã hội”, mỗi năm, THACO đều hỗ trợ nhiều hoạt động cộng đồng xã hội, để chia sẻ trách nhiệm trong nhiều lĩnh vực như: An ninh Tổ quốc, An sinh xã hội, An toàn giao thông, Giáo dục, Văn hóa - Văn nghệ, Y tế, Thể thao, Vì người nghèo, trao học bổng… Từ những thành quả đạt được trong kinh doanh và những đóng góp cho cộng đồng xã hội, liên tục nhiều năm qua Thaco đã được ghi nhận và vinh danh qua các giải thưởng: Bằng khen của Thủ tướng Chính phủ; Cờ Thi đua xuất sắc của Chính phủ; Bằng khen của các Bộ, ngành; Bằng khen của UBND tỉnh Quảng Nam; Bằng khen của UBND tỉnh Đồng Nai; Top 10 Sao vàng đất Việt; Top 10 giải thưởng thương hiệu Việt; Thương Hiệu Mạnh Việt Nam;... .</p>
+                        <ul class="featured-list">
+                            <li>
+                                <a href="#">
+                                    Văn phòng Tổng quản TP.HCM:
+
+                                    Tòa nhà SOFIC -  số 10 Mai Chí Thọ, P. Thủ Thiêm, Quận 2, TP. Hồ Chí Minh.
+                                    Điện thoại: (028)39977824 - 25 - 26
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Văn phòng THACO tại Đồng Nai:
+
+                                    Số 19 đường 2A, Khu công nghiệp Biên Hòa 2, Tỉnh Đồng Nai
+                                    Điện thoại: 0613891726
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#">
+                                    Văn phòng THACO tại Hà Nội:
+
+                                    Lô 6, KCN Hà Nội Đài Tư, 386 Nguyễn Văn Linh, Sài Đồng, Long Biên, Hà Nội
+                                    Điện thoại: 043 875 9314 - Fax: 043 875 8957
+                                </a>
+                            </li>
+
+                        </ul>
+                        <a href="about-us.html" class="filled-button">Đọc Thêm</a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="right-image">
+                        <img src="assets/images/Aboutus.jpg" alt="" width="1000px">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="services" style="background-image: url(assets/images/other-image-fullscren-1-1920x900.jpg);">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-heading">
+                        <h2>Bài đăng tin tức mới nhất</h2>
+
+                        <a href="blog.html">Đọc thêm <i class="fa fa-angle-right"></i></a>
+                    </div>
+                </div>
+
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item">
+                        <a href="#" class="services-item-image"><img src="assets/images/blog-1-370x270.jpg" class="img-fluid" alt=""></a>
+
+                        <div class="down-content">
+                            <h4><a href="#">Lorem ipsum dolor sit amet, consectetur adipisicing elit hic</a></h4>
+
+                            <p style="margin: 0;"> John Doe &nbsp;&nbsp;|&nbsp;&nbsp; 12/06/2020 10:30 &nbsp;&nbsp;|&nbsp;&nbsp; 114</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item">
+                        <a href="#" class="services-item-image"><img src="assets/images/blog-2-370x270.jpg" class="img-fluid" alt=""></a>
+
+                        <div class="down-content">
+                            <h4><a href="#">Lorem ipsum dolor sit amet consectetur adipisicing elit</a></h4>
+
+                            <p style="margin: 0;"> John Doe &nbsp;&nbsp;|&nbsp;&nbsp; 12/06/2020 10:30 &nbsp;&nbsp;|&nbsp;&nbsp; 114</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-4 col-md-6">
+                    <div class="service-item">
+                        <a href="#" class="services-item-image"><img src="assets/images/blog-3-370x270.jpg" class="img-fluid" alt=""></a>
+
+                        <div class="down-content">
+                            <h4><a href="#">Aperiam modi voluptatum fuga officiis cumque</a></h4>
+
+                            <p style="margin: 0;"> John Doe &nbsp;&nbsp;|&nbsp;&nbsp; 12/06/2020 10:30 &nbsp;&nbsp;|&nbsp;&nbsp; 114</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="happy-clients">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-heading">
+                        <h2>Khách hàng hài lòng</h2>
+
+                        <a href="testimonials.html">Đọc thêm <i class="fa fa-angle-right"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="owl-clients owl-carousel text-center">
+                        <div class="service-item">
+                            <div class="icon">
+                                <i class="fa fa-user"></i>
+                            </div>
+                            <div class="down-content">
+                                <h4>John Doe</h4>
+                                <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at quia quaerat."</em></p>
+                            </div>
+                        </div>
+
+                        <div class="service-item">
+                            <div class="icon">
+                                <i class="fa fa-user"></i>
+                            </div>
+                            <div class="down-content">
+                                <h4>Jane Smith</h4>
+                                <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at quia quaerat."</em></p>
+                            </div>
+                        </div>
+
+                        <div class="service-item">
+                            <div class="icon">
+                                <i class="fa fa-user"></i>
+                            </div>
+                            <div class="down-content">
+                                <h4>Antony Davis</h4>
+                                <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at quia quaerat."</em></p>
+                            </div>
+                        </div>
+
+                        <div class="service-item">
+                            <div class="icon">
+                                <i class="fa fa-user"></i>
+                            </div>
+                            <div class="down-content">
+                                <h4>John Doe</h4>
+                                <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at quia quaerat."</em></p>
+                            </div>
+                        </div>
+
+                        <div class="service-item">
+                            <div class="icon">
+                                <i class="fa fa-user"></i>
+                            </div>
+                            <div class="down-content">
+                                <h4>Jane Smith</h4>
+                                <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at quia quaerat."</em></p>
+                            </div>
+                        </div>
+
+                        <div class="service-item">
+                            <div class="icon">
+                                <i class="fa fa-user"></i>
+                            </div>
+                            <div class="down-content">
+                                <h4>Antony Davis</h4>
+                                <p class="n-m"><em>"Lorem ipsum dolor sit amet, consectetur an adipisicing elit. Itaque, corporis nulla at quia quaerat."</em></p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="call-to-action">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="inner-content">
+                        <div class="row">
+                            <div class="col-md-8">
+                                <h4>VUI LÒNG LIÊN HỆ VỚI CHÚNG TÔI QUA SỐ HOTLINE HOẶC QUA EMAIL.</h4>
+                                <p>Chúng tôi sẽ giải đáp thắc mắc của bạn trong thời gian sớm nhất..</p>
+                            </div>
+                            <div class="col-lg-4 col-md-6 text-right">
+                                <a href="contact.html" class="filled-button">Liên Hệ Với Chúng Tôi</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="footer-info">
+                        <div class="section-title">
+                            <h2>Trụ sở</h2>
+                        </div>
+                        <address>
+                            <p>475A Điện Biên Phủ<br>Phường 25, Quận Bình Thạnh, TP.HCM</p>
+                        </address>
+
+                        <ul class="social-icon">
+                            <li><a href="https://www.facebook.com/vhh000000/" class="fa fa-facebook-square" attr="facebook icon"></a></li>
+                            <li><a href="https://twitter.com/vhh0106" class="fa fa-twitter"></a></li>
+                            <li><a href="https://www.instagram.com/vhh0106.it/" class="fa fa-instagram"></a></li>
+                        </ul>
+
+                        <div class="copyright-text">
+                            <p>Copyright &copy; 2021 Thaco Việt Nam</p>
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-6">
+                    <div class="footer-info">
+                        <div class="section-title">
+                            <h2>Thông Tin Liên Hệ</h2>
+                        </div>
+                        <address>
+                            <p>034 855 4851</p>
+                            <p><a href="vhh0106@gmail.com">vhh0106@gmail.com</a></p>
+                        </address>
+
+                        <div class="footer_menu">
+                            <h2>Kết Nối nhanh</h2>
+                            <ul>
+                                <li><a href="index.html">Trang Chủ</a></li>
+                                <li><a href="about-us.html">Về Chúng Tôi</a></li>
+                                <li><a href="terms.html">Điều Khoản và Điều Kiện</a></li>
+                                <li><a href="contact.html">Liên Hệ Với Chúng Tôi</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-sm-12">
+                    <div class="footer-info newsletter-form">
+                        <div class="section-title">
+                            <h2>Đăng Kí Nhận Bản Tin</h2>
+                        </div>
+                        <div>
+                            <div class="form-group">
+                                <form action="#" method="get">
+                                    <input type="email" class="form-control" placeholder="Enter your email" name="email" id="email" required>
+                                    <input type="submit" class="form-control" name="submit" id="form-submit" value="Gửi cho tôi">
+                                </form>
+                                <span><sup>*</sup> Xin lưu ý - Chúng tôi không spam email của bạn.</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </footer>
+
+
+    <!-- Bootstrap core JavaScript -->
+    <script src="~/vendor/jquery/jquery.min.js"></script>
+    <script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+
+    <!-- Additional Scripts -->
+    <script src="~/assets/js/custom.js"></script>
+    <script src="~/assets/js/owl.js"></script>
 </body>
 </html>
