@@ -6,7 +6,7 @@ using System.Web.Mvc;
 
 namespace CarShowroom.Areas.Admin.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : SessionController
     {
         // GET: Admin/AdminHome
         public ActionResult Index()
