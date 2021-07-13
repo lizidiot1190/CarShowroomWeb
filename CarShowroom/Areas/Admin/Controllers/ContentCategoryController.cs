@@ -5,15 +5,18 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PagedList;
 
 namespace CarShowroom.Areas.Admin.Controllers
 {
-    public class ContentCategoryController : Controller
+    public class ContentCategoryController : SessionController
     {
         // GET: Admin/ContentCategory
-        public ActionResult Index()
+        public ActionResult Index(int page = 1, int pageSize = 1)
         {
-            return View();
+            var DAO = new ContentCategoryDAO();
+            var model = DAO.ListAllPage(page, pageSize);
+            return View(model);
         }
         [HttpGet]
         public ActionResult Create()

@@ -1,5 +1,6 @@
 ﻿using CarShowroom.Models;
 using Model.EF;
+using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -46,6 +47,11 @@ namespace CarShowroom.DAO
         public Category ViewDetail(int id)
         {
             return db.Categories.Find(id);
+        }
+
+        public IEnumerable<Category> ListAllPage(int page, int pageSize)
+        {
+            return db.Categories.OrderByDescending(x=>x.cratedDate).ToPagedList(page, pageSize); 
         }
     }
 }
