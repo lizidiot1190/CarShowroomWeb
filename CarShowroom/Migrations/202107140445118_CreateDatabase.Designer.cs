@@ -7,13 +7,13 @@ namespace CarShowroom.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class CreateAllTable : IMigrationMetadata
+    public sealed partial class CreateDatabase : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(CreateAllTable));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(CreateDatabase));
         
         string IMigrationMetadata.Id
         {
-            get { return "202107091804404_CreateAllTable"; }
+            get { return "202107140445118_CreateDatabase"; }
         }
         
         string IMigrationMetadata.Source

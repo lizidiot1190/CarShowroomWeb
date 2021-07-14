@@ -188,37 +188,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202107091747411_InitialModel.cs" />
-    <Compile Include="Migrations\202107091747411_InitialModel.Designer.cs">
-      <DependentUpon>202107091747411_InitialModel.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107091804404_CreateAllTable.cs" />
-    <Compile Include="Migrations\202107091804404_CreateAllTable.Designer.cs">
-      <DependentUpon>202107091804404_CreateAllTable.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107091852291_UpdateUser.cs" />
-    <Compile Include="Migrations\202107091852291_UpdateUser.Designer.cs">
-      <DependentUpon>202107091852291_UpdateUser.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107091912146_UpdateUser1.cs" />
-    <Compile Include="Migrations\202107091912146_UpdateUser1.Designer.cs">
-      <DependentUpon>202107091912146_UpdateUser1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107091916495_CreateAllTable1.cs" />
-    <Compile Include="Migrations\202107091916495_CreateAllTable1.Designer.cs">
-      <DependentUpon>202107091916495_CreateAllTable1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107091917563_CreateAllTable2.cs" />
-    <Compile Include="Migrations\202107091917563_CreateAllTable2.Designer.cs">
-      <DependentUpon>202107091917563_CreateAllTable2.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107091920206_CreateAllTable3.cs" />
-    <Compile Include="Migrations\202107091920206_CreateAllTable3.Designer.cs">
-      <DependentUpon>202107091920206_CreateAllTable3.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107111507170_update.cs" />
-    <Compile Include="Migrations\202107111507170_update.Designer.cs">
-      <DependentUpon>202107111507170_update.cs</DependentUpon>
+    <Compile Include="Migrations\202107140445118_CreateDatabase.cs" />
+    <Compile Include="Migrations\202107140445118_CreateDatabase.Designer.cs">
+      <DependentUpon>202107140445118_CreateDatabase.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Category.cs" />
@@ -2148,29 +2120,8 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202107091747411_InitialModel.resx">
-      <DependentUpon>202107091747411_InitialModel.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107091804404_CreateAllTable.resx">
-      <DependentUpon>202107091804404_CreateAllTable.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107091852291_UpdateUser.resx">
-      <DependentUpon>202107091852291_UpdateUser.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107091912146_UpdateUser1.resx">
-      <DependentUpon>202107091912146_UpdateUser1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107091916495_CreateAllTable1.resx">
-      <DependentUpon>202107091916495_CreateAllTable1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107091917563_CreateAllTable2.resx">
-      <DependentUpon>202107091917563_CreateAllTable2.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107091920206_CreateAllTable3.resx">
-      <DependentUpon>202107091920206_CreateAllTable3.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107111507170_update.resx">
-      <DependentUpon>202107111507170_update.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202107140445118_CreateDatabase.resx">
+      <DependentUpon>202107140445118_CreateDatabase.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

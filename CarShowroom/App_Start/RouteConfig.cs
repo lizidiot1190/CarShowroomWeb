@@ -16,7 +16,7 @@ namespace CarShowroom
             routes.MapRoute(
                 name: "Default",
                 url: "{controller}/{action}/{id}",
-                defaults: new { controller = "Login", action = "Login",area="Admin", id = UrlParameter.Optional }
+                defaults: new { controller = "Home", action = "Index", id = UrlParameter.Optional }
             );
 
             //routes.MapRoute(

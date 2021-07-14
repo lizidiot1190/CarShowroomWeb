@@ -3,7 +3,7 @@ namespace CarShowroom.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class CreateAllTable : DbMigration
+    public partial class CreateDatabase : DbMigration
     {
         public override void Up()
         {
@@ -13,7 +13,7 @@ namespace CarShowroom.Migrations
                     {
                         id = c.Long(nullable: false, identity: true),
                         name = c.String(maxLength: 250),
-                        metaTite = c.String(maxLength: 250),
+                        metaTitle = c.String(maxLength: 250),
                         parentID = c.Long(),
                         displayOrder = c.Int(),
                         seoTitle = c.String(maxLength: 250),
@@ -120,10 +120,21 @@ namespace CarShowroom.Migrations
                     })
                 .PrimaryKey(t => t.id);
             
+            CreateTable(
+                "dbo.User",
+                c => new
+                    {
+                        id = c.Long(nullable: false, identity: true),
+                        userName = c.String(maxLength: 50),
+                        passWord = c.String(maxLength: 32),
+                    })
+                .PrimaryKey(t => t.id);
+            
         }
         
         public override void Down()
         {
+            DropTable("dbo.User");
             DropTable("dbo.Slide");
             DropTable("dbo.Product");
             DropTable("dbo.ProductCategory");
