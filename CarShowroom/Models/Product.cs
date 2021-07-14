@@ -18,6 +18,9 @@ namespace Model.EF
         public string name { get; set; }
 
         [StringLength(500)]
+        public string productInfo { get; set; }
+
+        [StringLength(500)]
         public string description { get; set; }
 
         [StringLength(250)]

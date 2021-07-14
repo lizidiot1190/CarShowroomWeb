@@ -10,7 +10,10 @@ namespace Model.EF
     public partial class Info
     {
         public int id { get; set; }
-
+        [StringLength(250)]
+        public string name { get; set; }
+        [StringLength(250)]
+        public string image { get; set; }
         [Column(TypeName = "ntext")]
         public string content { get; set; }
 

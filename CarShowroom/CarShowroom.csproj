@@ -192,13 +192,19 @@
     <Compile Include="Migrations\202107140445118_CreateDatabase.Designer.cs">
       <DependentUpon>202107140445118_CreateDatabase.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107141025585_AddTableFounderRating.cs" />
+    <Compile Include="Migrations\202107141025585_AddTableFounderRating.Designer.cs">
+      <DependentUpon>202107141025585_AddTableFounderRating.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Category.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\Content.cs" />
+    <Compile Include="Models\Founder.cs" />
     <Compile Include="Models\Info.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\ProductCategory.cs" />
+    <Compile Include="Models\Rating.cs" />
     <Compile Include="Models\Slide.cs" />
     <Compile Include="Models\ApplicationUser.cs" />
     <Compile Include="Models\User.cs" />
@@ -2122,6 +2128,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\202107140445118_CreateDatabase.resx">
       <DependentUpon>202107140445118_CreateDatabase.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107141025585_AddTableFounderRating.resx">
+      <DependentUpon>202107141025585_AddTableFounderRating.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
