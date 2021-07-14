@@ -23,11 +23,30 @@ namespace CarShowroom.Areas.Admin.Controllers
         {
             return View();
         }
-
+        [HttpGet]
         public ActionResult Edit(int id)
         {
-            var category = new ContentCategoryDAO().ViewDetail(id);
-            return View(category);
+            var contentcategory = new ContentCategoryDAO().ViewDetail(id);
+            return View(contentcategory);
+        }
+        [HttpPost]
+        public ActionResult Edit(Category category)
+        {
+            if (ModelState.IsValid)
+            {
+                var DAO = new ContentCategoryDAO();
+                var result = DAO.Update(category);
+                if (result)
+                {
+                    return RedirectToAction("Index", "ContentCategory");
+                }
+                else
+                {
+                    ModelState.AddModelError("", "Sửa danh mục không thành công!");
+                }
+                
+            }
+            return View("Index");
         }
         [HttpPost]
         public ActionResult Create(Category category)
@@ -43,11 +62,17 @@ namespace CarShowroom.Areas.Admin.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Thêm user không thành công!");
+                    ModelState.AddModelError("", "Thêm danh mục không thành công!");
                 }
             }
             return View("Index");
 
+        }
+        [HttpDelete]
+        public ActionResult Delete(int id)
+        {
+            new ContentCategoryDAO().Delete(id);
+            return RedirectToAction("Index");
         }
     }
 }

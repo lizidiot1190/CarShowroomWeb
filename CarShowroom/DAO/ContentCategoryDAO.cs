@@ -43,6 +43,21 @@ namespace CarShowroom.DAO
                 return false;
             }
         }
+        
+        public bool Delete(int id)
+        {
+            try
+            {
+                var contentcategory = db.Categories.Find(id);
+                db.Categories.Remove(contentcategory);
+                db.SaveChanges();
+                return true;
+            }
+            catch(Exception)
+            {
+                return false;
+            }
+        }
 
         public Category ViewDetail(int id)
         {

@@ -27,10 +27,13 @@ Danh sách danh mục Content
                 <tbody>
                     @foreach(var item in Model)
                     {
-                        <tr>
+                        <tr id="row_@item.id">
                             <td>
                                 <a href="~/Admin/ContentCategory/Edit/@item.id">Sửa</a>
-                                <a href="~/Admin/ContentCategory/Delete/@item.id">Xóa</a>
+                                @Ajax.ActionLink("Xóa","Delete",new { @id = item.id },new AjaxOptions
+                           {
+                               Confirm="ban có chắc chắn xóa không?",OnComplete="$('row_"+@item.id+"').remove()",OnSuccess="windows.location.href='ContentCategory/Index'",HttpMethod="Delete"
+                           })
                             </td>
                             <td>@item.name</td>
                             <td>@item.metaTitle</td>

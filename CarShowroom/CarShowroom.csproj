@@ -212,18 +212,23 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="assets\css\fontawesome.css" />
+    <Content Include="assets\css\owl.css" />
     <Content Include="assets\css\sb-admin-2.css" />
     <Content Include="assets\css\sb-admin-2.min.css" />
+    <Content Include="assets\css\style.css" />
     <Content Include="assets\img\undraw_posting_photo.svg" />
     <Content Include="assets\img\undraw_profile.svg" />
     <Content Include="assets\img\undraw_profile_1.svg" />
     <Content Include="assets\img\undraw_profile_2.svg" />
     <Content Include="assets\img\undraw_profile_3.svg" />
     <Content Include="assets\img\undraw_rocket.svg" />
+    <Content Include="assets\js\custom.js" />
     <Content Include="assets\js\demo\chart-area-demo.js" />
     <Content Include="assets\js\demo\chart-bar-demo.js" />
     <Content Include="assets\js\demo\chart-pie-demo.js" />
     <Content Include="assets\js\demo\datatables-demo.js" />
+    <Content Include="assets\js\owl.js" />
     <Content Include="assets\js\sb-admin-2.js" />
     <Content Include="assets\js\sb-admin-2.min.js" />
     <Content Include="assets\vendor\bootstrap\js\bootstrap.bundle.js" />
@@ -1895,15 +1900,15 @@
     <Content Include="assets\vendor\jquery\jquery.min.js" />
     <Content Include="assets\vendor\jquery\jquery.slim.js" />
     <Content Include="assets\vendor\jquery\jquery.slim.min.js" />
-    <Content Include="Content\bootstrap-theme.css" />
-    <Content Include="Content\bootstrap-theme.min.css" />
-    <Content Include="Content\bootstrap.css" />
-    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="assets\css\bootstrap-theme.css" />
+    <Content Include="assets\css\bootstrap-theme.min.css" />
+    <Content Include="assets\css\bootstrap.css" />
+    <Content Include="assets\css\bootstrap.min.css" />
     <Content Include="Content\PagedList.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />
-    <Content Include="Content\Site.css" />
+    <Content Include="assets\css\Site.css" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="Areas\Admin\Views\web.config" />
@@ -2091,6 +2096,8 @@
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.js" />
     <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
+    <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.js" />
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -2106,21 +2113,21 @@
     <Content Include="Views\Web.config" />
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Views\Session\" />
-    <Folder Include="Views\Home\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
     <Content Include="fonts\glyphicons-halflings-regular.woff" />
     <Content Include="fonts\glyphicons-halflings-regular.ttf" />
     <Content Include="fonts\glyphicons-halflings-regular.eot" />
-    <Content Include="Content\bootstrap.min.css.map" />
-    <Content Include="Content\bootstrap.css.map" />
-    <Content Include="Content\bootstrap-theme.min.css.map" />
-    <Content Include="Content\bootstrap-theme.css.map" />
+    <Content Include="assets\css\bootstrap.min.css.map" />
+    <Content Include="assets\css\bootstrap.css.map" />
+    <Content Include="assets\css\bootstrap-theme.min.css.map" />
+    <Content Include="assets\css\bootstrap-theme.css.map" />
     <None Include="packages.config" />
     <Content Include="Scripts\jquery-3.4.1.slim.min.map" />
     <Content Include="Scripts\jquery-3.4.1.min.map" />
