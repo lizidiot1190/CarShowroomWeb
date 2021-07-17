@@ -22,7 +22,7 @@ namespace CarShowroom.Models
     public class ApplicationDbContext : DbContext
     {
         public DbSet<ProductCategory> ProductCategories { get; set; }
-        public DbSet<Category> Categories { get; set; }
+        public DbSet<ContentCategory> Categories { get; set; }
         public DbSet<Contact> Contacts { get; set; }
         public DbSet<Content> Contents { get; set; }
         public DbSet<Info> Infos { get; set; }

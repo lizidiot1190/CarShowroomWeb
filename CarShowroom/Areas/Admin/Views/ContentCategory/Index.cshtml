@@ -1,4 +1,4 @@
-﻿@model PagedList.IPagedList<Model.EF.Category>
+﻿@model PagedList.IPagedList<Model.EF.ContentCategory>
 @using PagedList.Mvc;
 <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
 @{ ViewBag.Title = "Quản lý danh mục content"; Layout = "~/Areas/Admin/Views/Shared/_Layouts.cshtml"; }
@@ -7,7 +7,9 @@ Danh sách danh mục Content
 }
 <div class="card shadow mb-4">
     <div class="card-header py-3">
-        <h6 class="m-0 font-weight-bold text-primary">DataTables Example</h6>
+        <form action="~/Admin/ContentCategory/Create">
+            <input type="submit" class="btn btn-primary btn-user" value="Thêm mới" />
+        </form>
     </div>
     <div class="card-body">
         <div class="table-responsive">

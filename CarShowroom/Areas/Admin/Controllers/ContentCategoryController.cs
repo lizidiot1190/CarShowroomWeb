@@ -12,7 +12,7 @@ namespace CarShowroom.Areas.Admin.Controllers
     public class ContentCategoryController : SessionController
     {
         // GET: Admin/ContentCategory
-        public ActionResult Index(int page = 1, int pageSize = 1)
+        public ActionResult Index(int page = 1, int pageSize = 10)
         {
             var DAO = new ContentCategoryDAO();
             var model = DAO.ListAllPage(page, pageSize);
@@ -30,7 +30,7 @@ namespace CarShowroom.Areas.Admin.Controllers
             return View(contentcategory);
         }
         [HttpPost]
-        public ActionResult Edit(Category category)
+        public ActionResult Edit(ContentCategory category)
         {
             if (ModelState.IsValid)
             {
@@ -49,7 +49,7 @@ namespace CarShowroom.Areas.Admin.Controllers
             return View("Index");
         }
         [HttpPost]
-        public ActionResult Create(Category category)
+        public ActionResult Create(ContentCategory category)
         {
             if (ModelState.IsValid)
             {

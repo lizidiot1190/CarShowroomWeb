@@ -16,14 +16,14 @@ namespace CarShowroom.DAO
             db = new ApplicationDbContext();
         }
 
-        public long Insert(Category entity)
+        public long Insert(ContentCategory entity)
         {
             db.Categories.Add(entity);
             db.SaveChanges();
             return entity.id;
         }
 
-        public bool Update(Category entity)
+        public bool Update(ContentCategory entity)
         {
             try
             {
@@ -59,12 +59,12 @@ namespace CarShowroom.DAO
             }
         }
 
-        public Category ViewDetail(int id)
+        public ContentCategory ViewDetail(int id)
         {
             return db.Categories.Find(id);
         }
 
-        public IEnumerable<Category> ListAllPage(int page, int pageSize)
+        public IEnumerable<ContentCategory> ListAllPage(int page, int pageSize)
         {
             return db.Categories.OrderByDescending(x=>x.cratedDate).ToPagedList(page, pageSize); 
         }

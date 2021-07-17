@@ -1,10 +1,12 @@
-namespace Model.EF
+﻿namespace Model.EF
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Web;
 
     [Table("Content")]
     public partial class Content
@@ -21,7 +23,10 @@ namespace Model.EF
         public string description { get; set; }
 
         [StringLength(250)]
+        [DisplayName("Upload ảnh")]
         public string image { get; set; }
+        [NotMapped]
+        public HttpPostedFileBase imageFile { get; set; }
 
         public long? categoryID { get; set; }
 
