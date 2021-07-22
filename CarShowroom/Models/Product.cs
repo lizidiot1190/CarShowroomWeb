@@ -26,12 +26,6 @@ namespace Model.EF
         [StringLength(250)]
         public string image { get; set; }
 
-        [Column(TypeName = "xml")]
-        public string inImages { get; set; }
-
-        [Column(TypeName = "xml")]
-        public string outImages { get; set; }
-
         public decimal? price { get; set; }
 
         public decimal? promotionPrice { get; set; }

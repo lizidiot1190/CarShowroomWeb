@@ -13,6 +13,9 @@ namespace Model.EF
         public int id { get; set; }
 
         [StringLength(250)]
+        public string imgContent { get; set; }
+
+        [StringLength(250)]
         public string image { get; set; }
 
         public int? displayOrder { get; set; }

@@ -197,6 +197,8 @@
     <Compile Include="Areas\Admin\Controllers\ContentController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Admin\Controllers\ProductCategoryController.cs" />
+    <Compile Include="Areas\Admin\Controllers\RatingController.cs" />
     <Compile Include="Areas\Admin\Controllers\SessionController.cs" />
     <Compile Include="Areas\Admin\Model\LoginModel.cs" />
     <Compile Include="Common\Constant.cs" />
@@ -205,6 +207,8 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DAO\ContentCategoryDAO.cs" />
     <Compile Include="DAO\ContentDAO.cs" />
+    <Compile Include="DAO\ProductCategoryDAO.cs" />
+    <Compile Include="DAO\RatingDAO.cs" />
     <Compile Include="DAO\UserDAO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -229,12 +233,17 @@
     <Compile Include="Migrations\202107151651531_insertImageFile.Designer.cs">
       <DependentUpon>202107151651531_insertImageFile.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202107211433497_AddMoreImage.cs" />
+    <Compile Include="Migrations\202107211433497_AddMoreImage.Designer.cs">
+      <DependentUpon>202107211433497_AddMoreImage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ContentCategory.cs" />
     <Compile Include="Models\Contact.cs" />
     <Compile Include="Models\Content.cs" />
     <Compile Include="Models\Founder.cs" />
     <Compile Include="Models\Info.cs" />
+    <Compile Include="Models\MoreProductImage.cs" />
     <Compile Include="Models\Product.cs" />
     <Compile Include="Models\ProductCategory.cs" />
     <Compile Include="Models\Rating.cs" />
@@ -2126,6 +2135,12 @@
     <Content Include="Areas\Admin\Views\Content\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Content\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Content\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductCategory\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductCategory\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\ProductCategory\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Rating\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Rating\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Rating\Edit.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2154,6 +2169,7 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Views\Session\" />
+    <Folder Include="assets\img\rating\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -2183,6 +2199,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107151651531_insertImageFile.resx">
       <DependentUpon>202107151651531_insertImageFile.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107211433497_AddMoreImage.resx">
+      <DependentUpon>202107211433497_AddMoreImage.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

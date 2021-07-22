@@ -33,6 +33,7 @@ namespace CarShowroom.Models
         public DbSet<User> Users { get; set; }
         public DbSet<Founder> Founders { get; set; }
         public DbSet<Rating> Ratings { get; set; }
+        public DbSet<MoreProductImage> MoreProductImages {get;set;}
         public ApplicationDbContext()
             : base("DefaultConnection")
         {

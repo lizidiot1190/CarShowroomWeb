@@ -7,18 +7,23 @@ using System.Web;
 
 namespace CarShowroom.Models
 {
-    public class Rating
+    public class MoreProductImage
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int id { get; set; }
+        public int productId { get; set; }
         [StringLength(255)]
-        public string name { get; set; }
+        public string img1 { get; set; }
         [StringLength(255)]
-        public string image { get; set; }
-        [NotMapped]
-        public HttpPostedFileBase imageFile { get; set; }
+        public string img2 { get; set; }
+        [StringLength(255)]
+        public string img3 { get; set; }
+        [StringLength(255)]
+        public string img4 { get; set; }
+        [StringLength(255)]
+        public string img5 { get; set; }
+        [StringLength(255)]
+        public string img6 { get; set; }
 
-        [StringLength(255)]
-        public string comment { get; set; }
     }
 }

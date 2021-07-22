@@ -1,5 +1,5 @@
 ﻿using CarShowroom.DAO;
-using Model.EF;
+using CarShowroom.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -8,12 +8,12 @@ using System.Web.Mvc;
 
 namespace CarShowroom.Areas.Admin.Controllers
 {
-    public class ContentController : SessionController
+    public class RatingController : SessionController
     {
-        // GET: Admin/Content
-        public ActionResult Index(int page = 1, int pageSize = 10)
+        // GET: Admin/Rating
+        public ActionResult Index(int page=1, int pageSize=10)
         {
-            var DAO = new ContentDAO();
+            var DAO = new RatingDAO();
             var model = DAO.ListAllPage(page, pageSize);
             return View(model);
         }
@@ -23,42 +23,42 @@ namespace CarShowroom.Areas.Admin.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Create(Content content)
+        public ActionResult Create(Rating rating)
         {
             if (ModelState.IsValid)
             {
-                var DAO = new ContentDAO();
-                long id = DAO.Insert(content);
+                var DAO = new RatingDAO();
+                var id = DAO.Insert(rating);
                 if (id > 0)
                 {
-                    return RedirectToAction("Index", "Content");
+                    return RedirectToAction("Index", "Rating");
                 }
                 else
                 {
-                    ModelState.AddModelError("", "Thêm content không thành công!");
+                    ModelState.AddModelError("", "Thêm đánh giá không thành công");
                 }
+
             }
             return View("Index");
+            
         }
-
-
 
         [HttpGet]
         public ActionResult Edit(int id)
         {
-            var content = new ContentDAO().ViewDetail(id);
-            return View(content);
+            var rating = new RatingDAO().ViewDetail(id);
+            return View(rating);
         }
         [HttpPost]
-        public ActionResult Edit(Content content)
+        public ActionResult Edit(Rating rating)
         {
             if (ModelState.IsValid)
             {
-                var DAO = new ContentDAO();
-                var result = DAO.Update(content);
+                var DAO = new RatingDAO();
+                var result = DAO.Update(rating);
                 if (result)
                 {
-                    return RedirectToAction("Index", "Content");
+                    return RedirectToAction("Index", "Rating");
                 }
                 else
                 {
@@ -67,16 +67,17 @@ namespace CarShowroom.Areas.Admin.Controllers
             }
             return View("Index");
         }
+
         [HttpDelete]
         public ActionResult Delete(int id)
         {
             if (ModelState.IsValid)
             {
-                var DAO = new ContentDAO();
+                var DAO = new RatingDAO();
                 var result = DAO.Delete(id);
                 if (result)
                 {
-                    return RedirectToAction("Content", "Index");
+                    return RedirectToAction("Rating", "Index");
                 }
                 else
                 {
@@ -86,5 +87,4 @@ namespace CarShowroom.Areas.Admin.Controllers
             return View("Index");
         }
     }
-
 }
