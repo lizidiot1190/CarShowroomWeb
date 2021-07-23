@@ -195,11 +195,14 @@
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
     <Compile Include="Areas\Admin\Controllers\ContentCategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\ContentController.cs" />
+    <Compile Include="Areas\Admin\Controllers\FounderController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
+    <Compile Include="Areas\Admin\Controllers\InfoController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductCategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\RatingController.cs" />
     <Compile Include="Areas\Admin\Controllers\SessionController.cs" />
+    <Compile Include="Areas\Admin\Controllers\SlideController.cs" />
     <Compile Include="Areas\Admin\Model\LoginModel.cs" />
     <Compile Include="Common\Constant.cs" />
     <Compile Include="Common\Encryption.cs" />
@@ -207,8 +210,11 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="DAO\ContentCategoryDAO.cs" />
     <Compile Include="DAO\ContentDAO.cs" />
+    <Compile Include="DAO\FounderDAO.cs" />
+    <Compile Include="DAO\InfoDAO.cs" />
     <Compile Include="DAO\ProductCategoryDAO.cs" />
     <Compile Include="DAO\RatingDAO.cs" />
+    <Compile Include="DAO\SlideDAO.cs" />
     <Compile Include="DAO\UserDAO.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -236,6 +242,22 @@
     <Compile Include="Migrations\202107211433497_AddMoreImage.cs" />
     <Compile Include="Migrations\202107211433497_AddMoreImage.Designer.cs">
       <DependentUpon>202107211433497_AddMoreImage.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107221139360_connect.cs" />
+    <Compile Include="Migrations\202107221139360_connect.Designer.cs">
+      <DependentUpon>202107221139360_connect.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107221519445_modifySlide.cs" />
+    <Compile Include="Migrations\202107221519445_modifySlide.Designer.cs">
+      <DependentUpon>202107221519445_modifySlide.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107231507586_Umbalaxibua.cs" />
+    <Compile Include="Migrations\202107231507586_Umbalaxibua.Designer.cs">
+      <DependentUpon>202107231507586_Umbalaxibua.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107231746532_Umbalaxibua1.cs" />
+    <Compile Include="Migrations\202107231746532_Umbalaxibua1.Designer.cs">
+      <DependentUpon>202107231746532_Umbalaxibua1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ContentCategory.cs" />
@@ -2141,6 +2163,15 @@
     <Content Include="Areas\Admin\Views\Rating\Index.cshtml" />
     <Content Include="Areas\Admin\Views\Rating\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Rating\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Founder\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Founder\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Founder\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Slide\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Slide\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Slide\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Info\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\Info\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Info\Edit.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2169,7 +2200,10 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Views\Session\" />
+    <Folder Include="assets\img\founder\" />
+    <Folder Include="assets\img\info\" />
     <Folder Include="assets\img\rating\" />
+    <Folder Include="assets\img\slide\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
@@ -2202,6 +2236,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107211433497_AddMoreImage.resx">
       <DependentUpon>202107211433497_AddMoreImage.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107221139360_connect.resx">
+      <DependentUpon>202107221139360_connect.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107221519445_modifySlide.resx">
+      <DependentUpon>202107221519445_modifySlide.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107231507586_Umbalaxibua.resx">
+      <DependentUpon>202107231507586_Umbalaxibua.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107231746532_Umbalaxibua1.resx">
+      <DependentUpon>202107231746532_Umbalaxibua1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

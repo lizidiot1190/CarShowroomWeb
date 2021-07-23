@@ -8,60 +8,61 @@ using System.Web;
 
 namespace CarShowroom.DAO
 {
-    public class RatingDAO
+    public class FounderDAO
     {
         private ApplicationDbContext db;
-        public RatingDAO()
+        public FounderDAO()
         {
             db = new ApplicationDbContext();
         }
 
-        public long Insert(Rating entity)
+        public long Insert(Founder entity)
         {
             string fileName = Path.GetFileNameWithoutExtension(entity.imageFile.FileName);
             string extension = Path.GetExtension(entity.imageFile.FileName);
             fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
-            entity.image = "~/assets/img/rating/" + fileName;
-            fileName = Path.Combine(HttpContext.Current.Server.MapPath("~/assets/img/rating/"), fileName);
+            entity.image= "~/assets/img/founder/" + fileName;
+            fileName = Path.Combine(HttpContext.Current.Server.MapPath("~/assets/img/founder/"), fileName);
             entity.imageFile.SaveAs(fileName);
-            db.Ratings.Add(entity);
+            db.Founders.Add(entity);
             db.SaveChanges();
             return entity.id;
         }
 
-        public bool Update(Rating entity)
+        public bool Update(Founder entity)
         {
-
             if (entity.imageFile == null)
             {
                 try
                 {
-                    var rating = db.Ratings.Find(entity.id);
-                    rating.name = entity.name;
-                    rating.comment = entity.comment;
+                    var founder = db.Founders.Find(entity.id);
+                    founder.name = entity.name;
+                    founder.slogan = entity.slogan;
                     db.SaveChanges();
                     return true;
                 }
-                catch
+                catch(Exception)
                 {
                     return false;
                 }
+                
             }
             else
             {
+
                 string fileName = Path.GetFileNameWithoutExtension(entity.imageFile.FileName);
                 string extension = Path.GetExtension(entity.imageFile.FileName);
                 fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
-                entity.image = "~/assets/img/rating/" + fileName;
-                fileName = Path.Combine(HttpContext.Current.Server.MapPath("~/assets/img/rating/"), fileName);
+                entity.image = "~/assets/img/founder/" + fileName;
+                fileName = Path.Combine(HttpContext.Current.Server.MapPath("~/assets/img/founder/"), fileName);
                 try
                 {
-                    var rating = db.Ratings.Find(entity.id);
-                    rating.name = entity.name;
-                    rating.image = entity.image;
-                    rating.imageFile = entity.imageFile;
-                    rating.imageFile.SaveAs(fileName);
-                    rating.comment = entity.comment;
+                    var founder = db.Founders.Find(entity.id);
+                    founder.name = entity.name;
+                    founder.slogan = entity.slogan;
+                    founder.image = entity.image;
+                    founder.imageFile = entity.imageFile;
+                    founder.imageFile.SaveAs(fileName);
                     db.SaveChanges();
                     return true;
                 }
@@ -70,33 +71,31 @@ namespace CarShowroom.DAO
                     return false;
                 }
             }
-
         }
 
         public bool Delete(int id)
         {
             try
             {
-                var rating = db.Ratings.Find(id);
-                db.Ratings.Remove(rating);
+                var founder = db.Founders.Find(id);
+                db.Founders.Remove(founder);
                 db.SaveChanges();
                 return true;
             }
-            catch (Exception)
+            catch(Exception)
             {
                 return false;
             }
         }
 
-
-        public IEnumerable<Rating> ListAllPage(int page, int pageSize)
+        public IEnumerable<Founder> ListAllPage(int page, int pageSize)
         {
-            return db.Ratings.OrderByDescending(p => p.id).ToPagedList(page, pageSize);
+            return db.Founders.OrderByDescending(p => p.id).ToPagedList(page, pageSize);
         }
 
-        public Rating ViewDetail(int id)
+        public Founder ViewDetail (int id)
         {
-            return db.Ratings.Find(id);
+            return db.Founders.Find(id); 
         }
     }
 }

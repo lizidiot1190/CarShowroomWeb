@@ -32,30 +32,54 @@ namespace CarShowroom.DAO
 
         public bool Update(Content entity)
         {
-            string fileName = Path.GetFileNameWithoutExtension(entity.imageFile.FileName);
-            string extension = Path.GetExtension(entity.imageFile.FileName);
-            fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
-            entity.image = "~/assets/img/" + fileName;
-            fileName = Path.Combine(HttpContext.Current.Server.MapPath("~/assets/img/"), fileName);
-            try
+            if (entity.imageFile == null)
             {
-                var content = db.Contents.Find(entity.id);
-                content.name = entity.name;
-                content.metaTitle = entity.metaTitle;
-                content.description = entity.description;
-                content.image =entity.image;
-                content.imageFile = entity.imageFile;
-                content.imageFile.SaveAs(fileName);
-                content.categoryID = entity.categoryID;
-                content.status = entity.status;
-                content.topHot = entity.topHot;
-                db.SaveChanges();
-                return true;
+                try
+                {
+                    var content = db.Contents.Find(entity.id);
+                    content.name = entity.name;
+                    content.metaTitle = entity.metaTitle;
+                    content.description = entity.description;
+                    content.categoryID = entity.categoryID;
+                    content.status = entity.status;
+                    content.topHot = entity.topHot;
+                    db.SaveChanges();
+                    return true;
+                }
+                catch(Exception)
+                {
+                    return false;
+                }
             }
-            catch (Exception)
+            else
             {
-                return false;
+                try
+                {
+                    string fileName = Path.GetFileNameWithoutExtension(entity.imageFile.FileName);
+                    string extension = Path.GetExtension(entity.imageFile.FileName);
+                    fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
+                    entity.image = "~/assets/img/" + fileName;
+                    fileName = Path.Combine(HttpContext.Current.Server.MapPath("~/assets/img/"), fileName);
+                    var content = db.Contents.Find(entity.id);
+                    content.name = entity.name;
+                    content.metaTitle = entity.metaTitle;
+                    content.description = entity.description;
+                    content.image = entity.image;
+                    content.imageFile = entity.imageFile;
+                    content.imageFile.SaveAs(fileName);
+                    content.categoryID = entity.categoryID;
+                    content.status = entity.status;
+                    content.topHot = entity.topHot;
+                    db.SaveChanges();
+                    return true;
+                }
+                catch (Exception)
+                {
+                    return false;
+                }
             }
+           
+           
         }
         
         public bool Delete(int id)
