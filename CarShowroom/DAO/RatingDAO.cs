@@ -39,8 +39,8 @@ namespace CarShowroom.DAO
 
         public bool Update(Rating entity)
         {
-            
-            if (entity.imageFile==null)
+
+            if (entity.imageFile == null)
             {
                 try
                 {
@@ -78,7 +78,7 @@ namespace CarShowroom.DAO
                     return false;
                 }
             }
-            
+
         }
 
         public bool Delete(int id)
@@ -98,7 +98,7 @@ namespace CarShowroom.DAO
         
 
 
-        public IEnumerable<Rating>ListAllPage(int page, int pageSize)
+        public IEnumerable<Rating> ListAllPage(int page, int pageSize)
         {
             return db.Ratings.OrderByDescending(p => p.id).ToPagedList(page, pageSize);
         }

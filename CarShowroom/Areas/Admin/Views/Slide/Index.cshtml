@@ -1,0 +1,65 @@
+﻿@model PagedList.IPagedList<Model.EF.Slide>
+@using PagedList.Mvc;
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+<script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")" type="text/javascript"></script>
+@{
+    ViewBag.Title = "Quản lý Slide";
+    Layout = "~/Areas/Admin/Views/Shared/_Layouts.cshtml";
+}
+
+@section header{
+    Slide
+}
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <form action="~/Admin/Slide/Create">
+            <input type="submit" class="btn btn-primary btn-user" value="Thêm mới" />
+        </form>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>Thay đổi</th>
+                        <th>Hình ảnh</th>
+                        <th>Display Order</th>
+                        <th>Link</th>
+                        <th>Mô tả</th>
+                        <th>Trạng thái</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr id="row_@item.id">
+                            <td>
+                                <a href="~/Admin/Slide/Edit/@item.id">Sửa</a>
+                                @Ajax.ActionLink("Xóa", "Delete", new { @id = item.id }, new AjaxOptions
+                           {
+                               Confirm = "Bạn có chắc chắn muốn xóa không?",
+                                    OnComplete = "$('row_" + @item.id + "').remove()",
+                                    OnSuccess = "windows.location.href='Slide/Index'",
+                                    HttpMethod = "Delete"
+                           })
+                            </td>
+                            <td><img src="@Url.Content(item.image)" height="100" /></td>
+                            <td>@item.displayOrder</td>
+                            <td>@item.link</td>
+                            <td>@item.description</td>
+                            <td>@item.status</td>
+
+                        </tr>
+
+                    }
+
+                </tbody>
+            </table>
+            @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
+        </div>
+    </div>
+
+</div>
+
+
