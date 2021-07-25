@@ -14,7 +14,7 @@ namespace Model.EF
         [StringLength(50)]
         public string userName { get; set; }
 
-        [StringLength(32)]
+        [StringLength(500)]
         public string passWord { get; set; }
     }
 }

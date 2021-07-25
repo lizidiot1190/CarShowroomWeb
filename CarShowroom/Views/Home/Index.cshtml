@@ -6,28 +6,19 @@
     var ListAllRatings = (List<CarShowroom.Models.Rating>)ViewBag.Rates;
     var ListAllContents = (List<Model.EF.Content>)ViewBag.Contents;
     var ShowInfos = (List<Model.EF.Info>)ViewBag.Infos;
-    var ShowSlideList = (List<Model.EF.Slide>)ViewBag.Slides;
+    var Slides = (List<Model.EF.Slide>)ViewBag.Slides;
 }
 <div class="banner header-text">
     <div class="owl-banner owl-carousel">
-        <div class="banner-item-01">
-            <div class="text-content">
-                <h4>TÌM XE CỦA BẠN NGAY HÔM NAY!</h4>
-                <h2>THACO VIỆT NAM</h2>
+        @foreach (var item in Slides)
+        {
+            <div class="banner-item-01" style="background-image: url('@item.image.Substring(1)')">
+                <div class="text-content">
+                    <h2>@item.description</h2>
+                </div>
             </div>
-        </div>
-        <div class="banner-item-02">
-            <div class="text-content">
-                <h4>TÌM XE CỦA BẠN NGAY HÔM NAY!</h4>
-                <h2>THACO VIỆT NAM</h2>
-            </div>
-        </div>
-        <div class="banner-item-03">
-            <div class="text-content">
-                <h4>TÌM XE CỦA BẠN NGAY HÔM NAY!</h4>
-                <h2>THACO VIỆT NAM</h2>
-            </div>
-        </div>
+        }
+
     </div>
 </div>
 
@@ -42,7 +33,7 @@
             </div>
             @foreach (var item in ListHotProducts)
             {
-                
+
                 <div class="col-lg-4 col-md-6">
                     <div class="product-item">
                         <a href="#"><img src="@item.image" alt="@item.name"></a>
@@ -63,11 +54,11 @@
                             <p>@item.description</p>
                             <!--<p>190 hp &nbsp;/&nbsp; Petrol &nbsp;/&nbsp; 2008 &nbsp;/&nbsp; Used vehicle</p>
 
-    <small>
-        <strong title="Author"><i class="fa fa-dashboard"></i> 130 000km</strong> &nbsp;&nbsp;&nbsp;&nbsp;
-        <strong title="Author"><i class="fa fa-cube"></i> 1800cc</strong>&nbsp;&nbsp;&nbsp;&nbsp;
-        <strong title="Views"><i class="fa fa-cog"></i> Manual</strong>
-    </small>-->
+                            <small>
+                                <strong title="Author"><i class="fa fa-dashboard"></i> 130 000km</strong> &nbsp;&nbsp;&nbsp;&nbsp;
+                                <strong title="Author"><i class="fa fa-cube"></i> 1800cc</strong>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <strong title="Views"><i class="fa fa-cog"></i> Manual</strong>
+                            </small>-->
                         </div>
                     </div>
                 </div>
@@ -86,29 +77,29 @@
                     <h2>Về Chúng Tôi</h2>
                 </div>
             </div>
-            
+
             <div class="col-md-6">
-                @foreach(var item in ShowInfos)
+                @foreach (var item in ShowInfos)
                 {
-                <div class="left-content">
-                    @if (item.link == false)
-                    {
-                        <p>@item.content</p>
-                    }
-                    else
-                    {
-                        <ul class="featured-list">
-                            <li>
-                                
-                                <a href="@item.content">@item.name</a>
-                            </li>
-                        </ul>
-                    }
+                    <div class="left-content">
+                        @if (item.link == false)
+                        {
+                            <p>@item.content</p>
+                        }
+                        else
+                        {
+                            <ul class="featured-list">
+                                <li>
+
+                                    <a href="@item.content">@item.name</a>
+                                </li>
+                            </ul>
+                        }
 
 
-                </div>
+                    </div>
                 }
-                
+
                 <a href="about-us.html" class="filled-button">Đọc Thêm</a>
             </div>
             <div class="col-md-6">
@@ -134,14 +125,14 @@
 
             @foreach (var item in ListAllContents)
             {
-                
+
                 <div class="col-lg-4 col-md-6">
                     <div class="service-item">
                         <a href="#" class="services-item-image"><img src="@item.image" class="img-fluid" alt=""></a>
 
                         <div class="down-content">
                             <h4><a href="#">@item.name</a></h4>
-                           <!--chỗ cần xuât ngày đăng, người đăng-->
+                            <!--chỗ cần xuât ngày đăng, người đăng-->
                             <p style="margin: 0;"> John Doe &nbsp;&nbsp;|&nbsp;&nbsp; 12/06/2020 10:30 &nbsp;&nbsp;|&nbsp;&nbsp; 114</p>
                         </div>
                     </div>
@@ -167,19 +158,19 @@
             <div class="col-md-12">
                 <div class="owl-clients owl-carousel text-center">
 
-                    @foreach(var item in ListAllRatings)
-            {
-                <div class="service-item">
-                    <div class="icon">
-                        <i class="fa fa-user"></i>
-                    </div>
-                    <div class="down-content">
-                        <h4>@item.name</h4>
-                        <p class="n-m"><em>@item.comment</em></p>
-                    </div>
-                </div>
-            }
-                    
+                    @foreach (var item in ListAllRatings)
+                    {
+                        <div class="service-item">
+                            <div class="icon">
+                                <i class="fa fa-user"></i>
+                            </div>
+                            <div class="down-content">
+                                <h4>@item.name</h4>
+                                <p class="n-m"><em>@item.comment</em></p>
+                            </div>
+                        </div>
+                    }
+
                 </div>
             </div>
         </div>

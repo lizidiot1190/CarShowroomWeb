@@ -3,16 +3,16 @@ namespace CarShowroom.Migrations
     using System;
     using System.Data.Entity.Migrations;
     
-    public partial class modifySlide : DbMigration
+    public partial class abd1 : DbMigration
     {
         public override void Up()
         {
-            DropColumn("dbo.Slide", "imgContent");
+            AlterColumn("dbo.User", "passWord", c => c.String(maxLength: 500));
         }
         
         public override void Down()
         {
-            AddColumn("dbo.Slide", "imgContent", c => c.String(maxLength: 250));
+            AlterColumn("dbo.User", "passWord", c => c.String(maxLength: 32));
         }
     }
 }

@@ -7,13 +7,13 @@ namespace CarShowroom.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.2.0-61023")]
-    public sealed partial class xetai : IMigrationMetadata
+    public sealed partial class abd1 : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(xetai));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(abd1));
         
         string IMigrationMetadata.Id
         {
-            get { return "202107241157183_xetai"; }
+            get { return "202107250711046_abd1"; }
         }
         
         string IMigrationMetadata.Source

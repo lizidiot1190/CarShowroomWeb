@@ -226,37 +226,13 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202107241612359_udpate.cs" />
-    <Compile Include="Migrations\202107241612359_udpate.Designer.cs">
-      <DependentUpon>202107241612359_udpate.cs</DependentUpon>
+    <Compile Include="Migrations\202107250659143_abd.cs" />
+    <Compile Include="Migrations\202107250659143_abd.Designer.cs">
+      <DependentUpon>202107250659143_abd.cs</DependentUpon>
     </Compile>
-    <Compile Include="Migrations\202107221139360_connect.cs" />
-    <Compile Include="Migrations\202107221139360_connect.Designer.cs">
-      <DependentUpon>202107221139360_connect.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107221519445_modifySlide.cs" />
-    <Compile Include="Migrations\202107221519445_modifySlide.Designer.cs">
-      <DependentUpon>202107221519445_modifySlide.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107231507586_Umbalaxibua.cs" />
-    <Compile Include="Migrations\202107231507586_Umbalaxibua.Designer.cs">
-      <DependentUpon>202107231507586_Umbalaxibua.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107231746532_Umbalaxibua1.cs" />
-    <Compile Include="Migrations\202107231746532_Umbalaxibua1.Designer.cs">
-      <DependentUpon>202107231746532_Umbalaxibua1.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107241157183_xetai.cs" />
-    <Compile Include="Migrations\202107241157183_xetai.Designer.cs">
-      <DependentUpon>202107241157183_xetai.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107242245559_asndsand.cs" />
-    <Compile Include="Migrations\202107242245559_asndsand.Designer.cs">
-      <DependentUpon>202107242245559_asndsand.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\202107242250360_asndsand1.cs" />
-    <Compile Include="Migrations\202107242250360_asndsand1.Designer.cs">
-      <DependentUpon>202107242250360_asndsand1.cs</DependentUpon>
+    <Compile Include="Migrations\202107250711046_abd1.cs" />
+    <Compile Include="Migrations\202107250711046_abd1.Designer.cs">
+      <DependentUpon>202107250711046_abd1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ContentCategory.cs" />
@@ -322,7 +298,7 @@
     <Content Include="assets\home\images\team_03.jpg" />
     <Content Include="assets\home\images\team_04.jpg" />
     <Content Include="assets\home\images\team_05.jpg" />
-    <Content Include="assets\home\images\team_06.jpg" />r
+    <Content Include="assets\home\images\team_06.jpg" />
     <Content Include="assets\home\images\vhh1.jpg" />
     <Content Include="assets\admin\img\undraw_posting_photo.svg" />
     <Content Include="assets\admin\img\undraw_profile.svg" />
@@ -2339,6 +2315,7 @@
     <Content Include="Views\Team\Team.cshtml" />
     <Content Include="Views\Product\Detail.cshtml" />
     <Content Include="Views\Product\ListAll.cshtml" />
+    <Content Include="Views\Product\ListByCatId.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -2364,29 +2341,11 @@
     <Content Include="Scripts\jquery-3.4.1.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\202107241612359_udpate.resx">
-      <DependentUpon>202107241612359_udpate.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202107250659143_abd.resx">
+      <DependentUpon>202107250659143_abd.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107221139360_connect.resx">
-      <DependentUpon>202107221139360_connect.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107221519445_modifySlide.resx">
-      <DependentUpon>202107221519445_modifySlide.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107231507586_Umbalaxibua.resx">
-      <DependentUpon>202107231507586_Umbalaxibua.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107231746532_Umbalaxibua1.resx">
-      <DependentUpon>202107231746532_Umbalaxibua1.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107241157183_xetai.resx">
-      <DependentUpon>202107241157183_xetai.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107242245559_asndsand.resx">
-      <DependentUpon>202107242245559_asndsand.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\202107242250360_asndsand1.resx">
-      <DependentUpon>202107242250360_asndsand1.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\202107250711046_abd1.resx">
+      <DependentUpon>202107250711046_abd1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

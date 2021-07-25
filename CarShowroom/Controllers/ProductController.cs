@@ -34,6 +34,16 @@ namespace CarShowroom.Controllers
             return View(list);
         }
 
+        public ActionResult ListByCatId(int id)
+        {
+            var category = new ProductCategoryDAO().ViewDetail(id);
+            ViewBag.Category = category;
+            var image = new SlideDAO().PickAnImage();
+            ViewBag.Image = image;
+            var model = new ProductDAO().ListByCatId(id);
+            return View(model);
+        }
+
         public ActionResult Detail(int id)
         {
             var product = new ProductDAO().ViewDetail(id);
