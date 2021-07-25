@@ -14,6 +14,8 @@ namespace Model.EF
         [StringLength(250)]
         public string name { get; set; }
         [StringLength(250)]
+        [NotMapped]
+        public HttpPostedFileBase imageFile { get; set; }
         public string image { get; set; }
         [NotMapped]
         public HttpPostedFileBase imageFile { get; set; }

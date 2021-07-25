@@ -16,22 +16,37 @@ namespace CarShowroom.DAO
         {
             db = new ApplicationDbContext();
         }
+<<<<<<< HEAD
+
+        public List<Info> ShowInfo()
+        {
+            return db.Infos.Where(y => y.status !=null).OrderBy(x => x.id).ToList();
+        }
+=======
         public List<Info> ShowInfo()
         {
             return db.Infos.Where(y => y.status != null).OrderBy(x => x.id).ToList();
+>>>>>>> 5e7f0c0fafb1d87cedeaa4b5a074acaf0f6d93c0
 
         public long Insert(Info entity)
         {
             string fileName = Path.GetFileNameWithoutExtension(entity.imageFile.FileName);
             string extension = Path.GetExtension(entity.imageFile.FileName);
             fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
+<<<<<<< HEAD
+            entity.image = "~/assets/img/" + fileName;
+            fileName = Path.Combine(HttpContext.Current.Server.MapPath("~/assets/img/"), fileName);
+=======
             entity.image = "~/assets/img/info/" + fileName;
             fileName = Path.Combine(HttpContext.Current.Server.MapPath("~/assets/img/info/"), fileName);
+>>>>>>> 5e7f0c0fafb1d87cedeaa4b5a074acaf0f6d93c0
             entity.imageFile.SaveAs(fileName);
             db.Infos.Add(entity);
             db.SaveChanges();
             return entity.id;
         }
+<<<<<<< HEAD
+=======
 
         public bool Update(Info entity)
         {
@@ -103,5 +118,6 @@ namespace CarShowroom.DAO
         {
             return db.Infos.Find(id);
         }
+>>>>>>> 5e7f0c0fafb1d87cedeaa4b5a074acaf0f6d93c0
     }
 }
