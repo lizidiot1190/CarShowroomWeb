@@ -17,9 +17,12 @@ namespace Model.EF
         [NotMapped]
         public HttpPostedFileBase imageFile { get; set; }
         public string image { get; set; }
+        [NotMapped]
+        public HttpPostedFileBase imageFile { get; set; }
         [Column(TypeName = "ntext")]
         public string content { get; set; }
 
         public bool? status { get; set; }
+        public bool? link{ get; set; }
     }
 }

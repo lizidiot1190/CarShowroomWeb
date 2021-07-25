@@ -1,0 +1,215 @@
+﻿@model Model.EF.Product
+
+@{
+    ViewBag.Title = "Detail";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    
+}
+
+<div class="page-heading about-heading header-text" style="background-image: url(@Model.image);">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-content">
+                    <h4><del>@Model.price</del> <strong class="text-primary">@Model.promotionPrice</strong></h4>
+                    <h2>@Model.name</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="products">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div>
+                    @*<img src="@Model.image" alt="" class="img-fluid wc-image">*@
+                    <img src="@Url.Content(Model.image)" alt="" class="img-fluid wc-image" />
+                </div>
+                <br>
+                <div class="row">
+                    <div class="col-sm-4 col-6">
+                        <div>
+                            <img src="assets/images/product-1-370x270.jpg" alt="" class="img-fluid">
+                        </div>
+                        <br>
+                    </div>
+                    <div class="col-sm-4 col-6">
+                        <div>
+                            <img src="assets/images/product-2-370x270.jpg" alt="" class="img-fluid">
+                        </div>
+                        <br>
+                    </div>
+                    <div class="col-sm-4 col-6">
+                        <div>
+                            <img src="assets/images/product-3-370x270.jpg" alt="" class="img-fluid">
+                        </div>
+                        <br>
+                    </div>
+
+                    <div class="col-sm-4 col-6">
+                        <div>
+                            <img src="assets/images/product-4-370x270.jpg" alt="" class="img-fluid">
+                        </div>
+                        <br>
+                    </div>
+                    <div class="col-sm-4 col-6">
+                        <div>
+                            <img src="assets/images/product-5-370x270.jpg" alt="" class="img-fluid">
+                        </div>
+                        <br>
+                    </div>
+                    <div class="col-sm-4 col-6">
+                        <div>
+                            <img src="assets/images/product-6-370x270.jpg" alt="" class="img-fluid">
+                        </div>
+                        <br>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <form action="#" method="post" class="form">
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item">
+                            <div class="clearfix">
+                                <span class="pull-left">Loaị xe</span>
+
+                                <strong class="pull-right">@Model.loaiXe</strong>
+                            </div>
+                        </li>
+
+                        <li class="list-group-item">
+                            <div class="clearfix">
+                                <span class="pull-left">Loại thùng</span>
+
+                                <strong class="pull-right">@Model.loaiThung</strong>
+                            </div>
+                        </li>
+
+                        <li class="list-group-item">
+                            <div class="clearfix">
+                                <span class="pull-left"> Tải trọng</span>
+
+                                <strong class="pull-right">@Model.taiTrong</strong>
+                            </div>
+                        </li>
+
+                        <li class="list-group-item">
+                            <div class="clearfix">
+                                <span class="pull-left">Năm sản xuất</span>
+
+                                <strong class="pull-right">@Model.namSX</strong>
+                            </div>
+                        </li>
+
+                        <li class="list-group-item">
+                            <div class="clearfix">
+                                <span class="pull-left">Hình thức</span>
+
+                                <strong class="pull-right">@Model.nhapKhau</strong>
+                            </div>
+                        </li>
+
+                        <li class="list-group-item">
+                            <div class="clearfix">
+                                <span class="pull-left">Loại nhiên liệu</span>
+
+                                <strong class="pull-right">@Model.nhienLieu</strong>
+                            </div>
+                        </li>
+
+                        <li class="list-group-item">
+                            <div class="clearfix">
+                                <span class="pull-left">Loại hộp số</span>
+
+                                <strong class="pull-right">@Model.hopSo</strong>
+                            </div>
+                        </li>
+
+                        @*<li class="list-group-item">
+                            <div class="clearfix">
+                                <span class="pull-left">Power</span>
+
+                                <strong class="pull-right">85 hp</strong>
+                            </div>
+                        </li>
+
+
+                        <li class="list-group-item">
+                            <div class="clearfix">
+                                <span class="pull-left">Gearbox</span>
+
+                                <strong class="pull-right">Manual</strong>
+                            </div>
+                        </li>
+
+                        <li class="list-group-item">
+                            <div class="clearfix">
+                                <span class="pull-left">Number of seats</span>
+
+                                <strong class="pull-right">4</strong>
+                            </div>
+                        </li>
+
+                        <li class="list-group-item">
+                            <div class="clearfix">
+                                <span class="pull-left">Doors</span>
+
+                                <strong class="pull-right">2/3</strong>
+                            </div>
+                        </li>
+
+                        <li class="list-group-item">
+                            <div class="clearfix">
+                                <span class="pull-left">Color</span>
+
+                                <strong class="pull-right">Black</strong>
+                            </div>
+                        </li>*@
+                    </ul>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="section-heading">
+                    <h2>Mô tả sả phẩm</h2>
+                </div>
+
+                <div class="left-content">
+                    <p>@Model.description</p>
+                </div>
+            </div>
+
+            @*<div class="col-md-6">
+                <div class="section-heading">
+                    <h2>Vehicle Extras</h2>
+                </div>
+
+                <div class="left-content">
+                    <p>- ABS <br>-Leather seats <br>-Power Assisted Steering <br>-Electric heated seats <br>-New HU and AU <br>-Xenon headlights</p>
+                </div>
+            </div>*@
+        </div>
+    </div>
+</div>
+
+<div class="section">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <div class="section-heading">
+                    <h2>Giá: <span>@(Model.price.HasValue? Model.price.Value.ToString("N0"): "Liên hệ")</span></h2>
+                </div>
+
+            </div>
+        </div>
+    </div>
+</div>

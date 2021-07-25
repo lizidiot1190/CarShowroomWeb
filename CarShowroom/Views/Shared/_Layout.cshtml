@@ -12,7 +12,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="~/assets/img/LOGO_THACO.png ">
+    <link rel="icon" href="~/assets/images/LOGO_THACO.png">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="~/Content/css/StyleSheet1.css">
 
@@ -20,12 +20,12 @@
     <title>Thaco Showroom </title>
 
     <!-- Bootstrap core CSS -->
-    <link href="~/assets/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/assets/home/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
 
     <!-- Additional CSS Files -->
-    <link rel="stylesheet" href="~/assets/css/fontawesome.css">
-    <link rel="stylesheet" href="~/assets/css/style.css">
-    <link rel="stylesheet" href="~/assets/css/owl.css">
+    <link rel="stylesheet" href="~/assets/home/css/fontawesome.css">
+    <link rel="stylesheet" href="~/assets/home/css/style.css">
+    <link rel="stylesheet" href="~/assets/home/css/owl.css">
 
 </head>
 
@@ -44,7 +44,9 @@
     <header class="">
         <nav class="navbar navbar-expand-lg">
             <div class="container">
-                <a class="navbar-brand" href="index.html"><h2 style="color: rgb(42, 42, 168);">Thaco <em>ShowRoom</em></h2></a>
+                @{var Url = "/Home/Index";
+                    <a class="navbar-brand" href="@Url"><h2 style="color: rgb(42, 42, 168);">Thaco <em>ShowRoom</em></h2></a>
+                }
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
@@ -57,10 +59,11 @@
                             </a>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" href="cars.html">Sản phẩm</a></li>
+                        <li class="nav-item"><a class="nav-link" href="~/Product/ListAll">Sản phẩm</a></li>
 
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Nhiều hơn</a>
+<<<<<<< HEAD
 
                             <ul class="dropdown-menu">
                                 <li><a href="@Url.Action("Index1","Content")">Tin tức</a></li>
@@ -68,6 +71,18 @@
                                 <li><a href="#">>Đánh giá</a></li>
                                 <li><a href="#">>Điều kiện</a></li>
                             </ul>
+=======
+                            @{
+                                var url = "/Rating/Rating";
+                                var nsl = "/Team/Team";
+                            }
+                            <div class="dropdown-menu">
+                                <a class="dropdown-item" href="blog.html">Tin tức</a>
+                                <a class="dropdown-item" href="@nsl">Nhà sáng lập</a>
+                                <a class="dropdown-item" href="@url">Đánh giá</a>
+                                <a class="dropdown-item" href="terms.html">Điều kiện</a>
+                            </div>
+>>>>>>> 5e7f0c0fafb1d87cedeaa4b5a074acaf0f6d93c0
                         </li>
 
                         <li class="nav-item"><a class="nav-link" href="@Url.Action("Index","Info")">Về chúng tôi</a></li>
@@ -81,11 +96,36 @@
 
     <!-- Page Content -->
     <!-- Banner Starts Here -->
+<<<<<<< HEAD
     @RenderSection("AboutUs", required: false)
     @RenderSection("Index1", required: false)
     
+=======
+    @*<div class="banner header-text">
+        <div class="owl-banner owl-carousel">
+            <div class="banner-item-01">
+                <div class="text-content">
+                    <h4>TÌM XE CỦA BẠN NGAY HÔM NAY!</h4>
+                    <h2>THACO VIỆT NAM</h2>
+                </div>
+            </div>
+            <div class="banner-item-02">
+                <div class="text-content">
+                    <h4>TÌM XE CỦA BẠN NGAY HÔM NAY!</h4>
+                    <h2>THACO VIỆT NAM</h2>
+                </div>
+            </div>
+            <div class="banner-item-03">
+                <div class="text-content">
+                    <h4>TÌM XE CỦA BẠN NGAY HÔM NAY!</h4>
+                    <h2>THACO VIỆT NAM</h2>
+                </div>
+            </div>
+        </div>
+    </div>*@
+>>>>>>> 5e7f0c0fafb1d87cedeaa4b5a074acaf0f6d93c0
     <!-- Banner Ends Here -->
-
+    
     @RenderBody()
 
 
@@ -160,12 +200,12 @@
 
 
     <!-- Bootstrap core JavaScript -->
-    <script src="~/assets/vendor/jquery/jquery.min.js"></script>
-    <script src="~/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="~/assets/home/vendor/jquery/jquery.min.js"></script>
+    <script src="~/assets/home/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
 
     <!-- Additional Scripts -->
-    <script src="~/assets/js/custom.js"></script>
-    <script src="~/assets/js/owl.js"></script>
+    <script src="~/assets/home/js/custom.js"></script>
+    <script src="~/assets/home/js/owl.js"></script>
 </body>
 </html>
