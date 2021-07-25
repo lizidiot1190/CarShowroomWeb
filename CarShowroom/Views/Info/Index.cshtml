@@ -1,0 +1,68 @@
+﻿
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var ShowInfo = (List<Model.EF.Info>)ViewBag.Infos;
+}
+@section AboutUs{
+    <div class="page-heading about-heading header-text" style="background-image: url(); background-image: url('../../Content/images/heading-1-1920x500.jpg');">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="text-content">
+                        <h4>Về chúng tôi</h4>
+                        <h2>Công TY CHÚNG TÔI</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+@foreach (var item in ShowInfo)
+{
+    <div class="best-features about-features">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-heading">
+                        <h2>@item.name</h2>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="right-image-custom">
+                        <a href="#"><img src="@Url.Content(item.image)" width="100" height="100" /></a>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <div class="left-content">
+                        <h4>@item.name</h4>
+                        <p>@item.content</p>
+                        <ul class="social-icons">
+                            <li><a href="https://www.facebook.com/vhh000000/"><i class="fa fa-facebook"></i></a></li>
+                            <li><a href="https://twitter.com/vhh0106"><i class="fa fa-twitter"></i></a></li>
+
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="team-members">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="section-heading">
+                        <h2></h2>
+                    </div>
+                    <p></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
+
+

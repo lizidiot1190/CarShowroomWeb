@@ -1,0 +1,54 @@
+﻿* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+.h-body {
+    padding-left: 175px;
+    padding-right: 175px;
+}
+
+.h-top {
+    width: 999px;
+    height: 500px;
+}
+
+.h-left {
+    width: 333px;
+    height: 500px;
+    float: left;
+}
+
+img {
+    width: 333px;
+    height: 150px;
+}
+
+.h-right {
+    width: 666px;
+    height: 500px;
+    float: right;
+    padding-left: 20px;
+}
+
+.h-bot {
+    width: 999px;
+    height: 500px;
+}
+
+h4 {
+    color: rgb(39, 1, 7);
+}
+
+p {
+    font-size: 25px;
+}
+
+#h-p1 {
+    padding-bottom: 16px;
+}
+
+#h-p2 {
+    padding-bottom: 28px;
+}

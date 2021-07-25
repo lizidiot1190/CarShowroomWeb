@@ -14,6 +14,8 @@
     <meta name="author" content="">
     <link rel="icon" href="~/assets/img/LOGO_THACO.png ">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="~/Content/css/StyleSheet1.css">
+
 
     <title>Thaco Showroom </title>
 
@@ -60,15 +62,15 @@
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Nhiều hơn</a>
 
-                            <div class="dropdown-menu">
-                                <a class="dropdown-item" href="blog.html">Tin tức</a>
-                                <a class="dropdown-item" href="team.html">Nhà sáng lập</a>
-                                <a class="dropdown-item" href="testimonials.html">Đánh giá</a>
-                                <a class="dropdown-item" href="terms.html">Điều kiện</a>
-                            </div>css
+                            <ul class="dropdown-menu">
+                                <li><a href="@Url.Action("Index1","Content")">Tin tức</a></li>
+                                <li><a href="#">>Nhà sáng lập</a></li>
+                                <li><a href="#">>Đánh giá</a></li>
+                                <li><a href="#">>Điều kiện</a></li>
+                            </ul>
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" href="about-us.html">Về chúng tôi</a></li>
+                        <li class="nav-item"><a class="nav-link" href="@Url.Action("Index","Info")">Về chúng tôi</a></li>
 
                         <li class="nav-item"><a class="nav-link" href="contact.html">Liên Hệ Với Chúng Tôi</a></li>
                     </ul>
@@ -79,28 +81,9 @@
 
     <!-- Page Content -->
     <!-- Banner Starts Here -->
-    <div class="banner header-text">
-        <div class="owl-banner owl-carousel">
-            <div class="banner-item-01">
-                <div class="text-content">
-                    <h4>TÌM XE CỦA BẠN NGAY HÔM NAY!</h4>
-                    <h2>THACO VIỆT NAM</h2>
-                </div>
-            </div>
-            <div class="banner-item-02">
-                <div class="text-content">
-                    <h4>TÌM XE CỦA BẠN NGAY HÔM NAY!</h4>
-                    <h2>THACO VIỆT NAM</h2>
-                </div>
-            </div>
-            <div class="banner-item-03">
-                <div class="text-content">
-                    <h4>TÌM XE CỦA BẠN NGAY HÔM NAY!</h4>
-                    <h2>THACO VIỆT NAM</h2>
-                </div>
-            </div>
-        </div>
-    </div>
+    @RenderSection("AboutUs", required: false)
+    @RenderSection("Index1", required: false)
+    
     <!-- Banner Ends Here -->
 
     @RenderBody()

@@ -5,6 +5,7 @@ namespace Model.EF
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
+    using System.Web;
 
     [Table("Info")]
     public partial class Info
@@ -13,6 +14,8 @@ namespace Model.EF
         [StringLength(250)]
         public string name { get; set; }
         [StringLength(250)]
+        [NotMapped]
+        public HttpPostedFileBase imageFile { get; set; }
         public string image { get; set; }
         [Column(TypeName = "ntext")]
         public string content { get; set; }
