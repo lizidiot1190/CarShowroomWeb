@@ -74,5 +74,6 @@ namespace CarShowroom.DAO
         {
             return db.ProductCategories.Where(p => p.status == true).OrderByDescending(p => p.id).ToList();
         }
+
     }
 }

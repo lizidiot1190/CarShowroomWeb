@@ -20,7 +20,7 @@ namespace CarShowroom.Controllers
             var showinfo = new InfoDAO();
             ViewBag.Infos = showinfo.ShowInfo();
             var slidedao = new SlideDAO();
-            ViewBag.Slides = slidedao.ShowSlideList();
+            ViewBag.Slides = slidedao.GetListSlide();
             return View();
         }
         

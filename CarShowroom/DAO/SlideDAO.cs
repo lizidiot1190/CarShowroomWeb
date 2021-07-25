@@ -16,10 +16,6 @@ namespace CarShowroom.DAO
         {
             db = new ApplicationDbContext();
         }
-        public List<Slide> ShowSlideList()
-        {
-            return db.Slides.OrderBy(x => x.id).ToList();
-        }
 
         public long Insert(Slide entity)
         {
@@ -110,6 +106,11 @@ namespace CarShowroom.DAO
         public Slide PickAnImage()
         {
             return db.Slides.AsEnumerable().FirstOrDefault(p => p.status == true);
+        }
+
+        public List<Slide> GetListSlide()
+        {
+            return db.Slides.Where(p => p.status == true).ToList();
         }
 
     }

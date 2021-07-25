@@ -13,6 +13,8 @@ namespace CarShowroom.Controllers
         //GET: Info
         public ActionResult Index()
         {
+            var image = new SlideDAO().PickAnImage();
+            ViewBag.Image = image;
             var showinfo = new InfoDAO();
             ViewBag.Infos = showinfo.ShowInfo();
             return View();

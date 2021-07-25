@@ -37,6 +37,9 @@ namespace CarShowroom.DAO
                 {
                     var founder = db.Founders.Find(entity.id);
                     founder.name = entity.name;
+                    founder.position = entity.position;
+                    founder.link1 = entity.link1;
+                    founder.link2 = entity.link2;
                     founder.slogan = entity.slogan;
                     db.SaveChanges();
                     return true;
@@ -59,6 +62,9 @@ namespace CarShowroom.DAO
                 {
                     var founder = db.Founders.Find(entity.id);
                     founder.name = entity.name;
+                    founder.position = entity.position;
+                    founder.link1 = entity.link1;
+                    founder.link2 = entity.link2;
                     founder.slogan = entity.slogan;
                     founder.image = entity.image;
                     founder.imageFile = entity.imageFile;

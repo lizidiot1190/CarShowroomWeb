@@ -3,15 +3,16 @@
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
     var ShowInfo = (List<Model.EF.Info>)ViewBag.Infos;
+    var image = (Model.EF.Slide)ViewBag.Image;
 }
 @section AboutUs{
-    <div class="page-heading about-heading header-text" style="background-image: url(); background-image: url('../../Content/images/heading-1-1920x500.jpg');">
+    <div class="page-heading about-heading header-text" style="background-image: url('@image.image.Substring(1)');">
         <div class="container">
             <div class="row">
                 <div class="col-md-12">
                     <div class="text-content">
-                        <h4>Về chúng tôi</h4>
-                        <h2>Công TY CHÚNG TÔI</h2>
+                        <h4></h4>
+                        <h2>Về chúng tôi</h2>
                     </div>
                 </div>
             </div>

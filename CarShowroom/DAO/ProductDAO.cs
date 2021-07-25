@@ -136,5 +136,10 @@ namespace CarShowroom.DAO
         {
             return db.Products.Where(p=>p.status== true).OrderByDescending(p => p.categoryID).ToList();
         }
+
+        public List<Product> ListByCatId(int id)
+        {
+            return db.Products.Where(p => p.status == true && p.categoryID == id).OrderByDescending(p => p.categoryID).ToList();
+        }
     }
 }

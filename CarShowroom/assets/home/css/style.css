@@ -21,6 +21,7 @@ ul {
 	list-style: none;
 }
 
+
 h1,h2,h3,h4,h5,h6 {
 	margin: 0px;
 }
@@ -76,7 +77,7 @@ a.filled-button:hover {
 
 .section-heading h2 {
 	font-size: 28px;
-	font-weight: 400;
+	font-weight: 500;
 	color: #1e1e1e;
 	margin-bottom: 15px;
 }
@@ -694,6 +695,7 @@ footer .inner-content p a {
 
 .team-member img {
 	width: 100%;
+	height:auto;
 	overflow: hidden;
 }
 
@@ -1023,6 +1025,7 @@ footer .inner-content p a {
 		margin-bottom: 20px;
 	}
 	.product-item .down-content h4 {
+		text-align:center;
 		margin-bottom: 20px!important;
 	}
 	.best-features .left-content {

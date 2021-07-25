@@ -1,4 +1,4 @@
-﻿
+﻿@using System.Web.Mvc;
 @{
     Layout = null;
 }
@@ -63,29 +63,24 @@
 
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" data-toggle="dropdown" href="#" role="button" aria-haspopup="true" aria-expanded="false">Nhiều hơn</a>
-<<<<<<< HEAD
-
-                            <ul class="dropdown-menu">
+                            @*<ul class="dropdown-menu">
                                 <li><a href="@Url.Action("Index1","Content")">Tin tức</a></li>
                                 <li><a href="#">>Nhà sáng lập</a></li>
                                 <li><a href="#">>Đánh giá</a></li>
                                 <li><a href="#">>Điều kiện</a></li>
-                            </ul>
-=======
+                            </ul>*@
                             @{
                                 var url = "/Rating/Rating";
                                 var nsl = "/Team/Team";
                             }
                             <div class="dropdown-menu">
-                                <a class="dropdown-item" href="blog.html">Tin tức</a>
+                                <a class="dropdown-item" href="/Content/Index1">Tin tức</a>
                                 <a class="dropdown-item" href="@nsl">Nhà sáng lập</a>
                                 <a class="dropdown-item" href="@url">Đánh giá</a>
-                                <a class="dropdown-item" href="terms.html">Điều kiện</a>
                             </div>
->>>>>>> 5e7f0c0fafb1d87cedeaa4b5a074acaf0f6d93c0
                         </li>
 
-                        <li class="nav-item"><a class="nav-link" href="@Url.Action("Index","Info")">Về chúng tôi</a></li>
+                        <li class="nav-item"><a class="nav-link" href="~/Info/Index">Về chúng tôi</a></li>
 
                         <li class="nav-item"><a class="nav-link" href="contact.html">Liên Hệ Với Chúng Tôi</a></li>
                     </ul>
@@ -96,11 +91,9 @@
 
     <!-- Page Content -->
     <!-- Banner Starts Here -->
-<<<<<<< HEAD
     @RenderSection("AboutUs", required: false)
     @RenderSection("Index1", required: false)
     
-=======
     @*<div class="banner header-text">
         <div class="owl-banner owl-carousel">
             <div class="banner-item-01">
@@ -123,7 +116,6 @@
             </div>
         </div>
     </div>*@
->>>>>>> 5e7f0c0fafb1d87cedeaa4b5a074acaf0f6d93c0
     <!-- Banner Ends Here -->
     
     @RenderBody()

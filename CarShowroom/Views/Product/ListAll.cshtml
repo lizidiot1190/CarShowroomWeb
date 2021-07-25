@@ -24,7 +24,7 @@
                 <div class="col-md-12">
                     <div class="section-heading">
                         <h2>@category.name</h2>
-                        <a href="cars.html">view more <i class="fa fa-angle-right"></i></a>
+                        <a href="~/Product/ListByCatId/@category.id">View more <i class="fa fa-angle-right"></i></a>
                     </div>
                 </div>
 
@@ -34,9 +34,9 @@
                     {
                         <div class="col-lg-3 col-md-5">
                             <div class="product-item">
-                                <a href="car-details.html"><img src="@Url.Content(item.image)" alt=""></a>
+                                <a href="~/Product/Detail/@item.id"><img src="@Url.Content(item.image)" alt=""></a>
                                 <div class="down-content">
-                                    <a href="car-details.html"><h4>@item.name</h4></a>
+                                    <a href="~/Product/Detail/@item.id"><h4>@item.name</h4></a>
 
                                     <h6><small><del> @item.price</del></small> @item.promotionPrice</h6>
 
@@ -61,16 +61,4 @@
         </div>
     </div>
 </div>
-
-<footer>
-    <div class="container">
-        <div class="row">
-            <div class="col-md-12">
-                <div class="inner-content">
-                    <p>Copyright © 2020 Thcao </p>
-                </div>
-            </div>
-        </div>
-    </div>
-</footer>
 

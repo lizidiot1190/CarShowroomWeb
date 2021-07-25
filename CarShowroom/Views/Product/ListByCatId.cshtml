@@ -1,0 +1,54 @@
+﻿@model List<Model.EF.Product>
+@{
+    ViewBag.Title = "ListByCatId";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var category = (Model.EF.ProductCategory)ViewBag.Category;
+    var image = (Model.EF.Slide)ViewBag.Image;
+    var imageLink = image.image.ToString().Substring(1);
+}
+
+<div class="page-heading about-heading header-text" style="background-image: url('@imageLink');">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="latest-products">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-heading">
+                    <h2>@category.name</h2>
+                </div>
+            </div>
+
+            @foreach (var item in Model)
+            {
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-item">
+                        <a href="~/Product/Detail/@item.id"><img src="@Url.Content(item.image)" alt=""></a>
+                        <div class="down-content">
+                            <a href="~/Product/Detail/@item.id"><h4>@item.name</h4></a>
+
+                            <h6><small><del> @item.price</del></small> @item.promotionPrice</h6>
+
+                            <p>@item.taiTrong &nbsp;/&nbsp; @item.nhienLieu &nbsp;/&nbsp; @item.namSX &nbsp;</p>
+
+                            <small>
+                                <strong title="Loại thùng"><i class="fa fa-dashboard"></i> @item.loaiThung</strong> &nbsp;&nbsp;&nbsp;&nbsp;
+                                <strong title="Hình thức"><i class="fa fa-cube"></i> @item.nhapKhau</strong>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <strong title="Loại hộp số"><i class="fa fa-cog"></i> @item.hopSo</strong>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+
+            }
+
+
+        </div>
+    </div>
+</div>
+

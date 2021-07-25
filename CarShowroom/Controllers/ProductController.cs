@@ -15,12 +15,16 @@ namespace CarShowroom.Controllers
             return View();
         }
 
-        //public ActionResult ListByCatId(int cateId)
-        //{
-           
-        //    var model = new ProductDAO().ListByCatId(cateId);
-        //    return View(model);
-        //}
+        [HttpGet]
+        public ActionResult ListByCatId(int id)
+        {
+            var list = new ProductCategoryDAO().ViewDetail(id);
+            ViewBag.Category = list;
+            var image1 = new SlideDAO().PickAnImage();
+            ViewBag.Image = image1;
+            var model = new ProductDAO().ListByCatId(id);
+            return View(model);
+        }
 
         public ActionResult ListAll()
         {
