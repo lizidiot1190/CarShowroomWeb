@@ -26,7 +26,7 @@ namespace CarShowroom.Migrations
                 .PrimaryKey(t => t.id);
             
             CreateTable(
-                "dbo.Contact",
+                "dbo.Feedback",
                 c => new
                     {
                         id = c.Int(nullable: false, identity: true),

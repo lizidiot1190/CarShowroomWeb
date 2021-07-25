@@ -25,7 +25,12 @@ namespace CarShowroom
             new { controller = "Home", action = "Index", id = UrlParameter.Optional },
             new[] { "CarShowroom.Controllers" }
             );
-
+            routes.MapRoute(
+            "Contact",
+            "{controller}/{action}/{id}",
+            new { controller = "Contact", action = "Index", id = UrlParameter.Optional },
+            new[] { "CarShowroom.Controllers" }
+            );
         }
     }
 }

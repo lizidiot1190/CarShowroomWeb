@@ -4,23 +4,23 @@
 }
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="vi">
 
 <head>
+
 
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="">
-    <link rel="icon" href="~/assets/img/LOGO_THACO.png ">
+    <link rel="icon" href="~/assets/images/LOGO_THACO.png">
     <link href="https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap" rel="stylesheet">
 
     <title>Thaco Showroom </title>
 
-    <!-- Bootstrap core CSS -->
-    <link href="~/assets/css/bootstrap.min.css" rel="stylesheet">
 
-    <!-- Additional CSS Files -->
+    <link href="~/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+
     <link rel="stylesheet" href="~/assets/css/fontawesome.css">
     <link rel="stylesheet" href="~/assets/css/style.css">
     <link rel="stylesheet" href="~/assets/css/owl.css">
@@ -30,11 +30,13 @@
 <body>
 
     <!-- ***** Preloader Start ***** -->
-    <div id="preloader">
-        <div class="jumper">
-            <div></div>
-            <div></div>
-            <div></div>
+    <div id="preloader" style="opacity: 0; visibility: hidden; display: none;">
+        <div id="preloader">
+            <div class="jumper">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
         </div>
     </div>
     <!-- ***** Preloader End ***** -->
@@ -65,12 +67,12 @@
                                 <a class="dropdown-item" href="team.html">Nhà sáng lập</a>
                                 <a class="dropdown-item" href="testimonials.html">Đánh giá</a>
                                 <a class="dropdown-item" href="terms.html">Điều kiện</a>
-                            </div>css
+                            </div>
                         </li>
 
                         <li class="nav-item"><a class="nav-link" href="about-us.html">Về chúng tôi</a></li>
 
-                        <li class="nav-item"><a class="nav-link" href="contact.html">Liên Hệ Với Chúng Tôi</a></li>
+                        <li class="nav-item"><a class="nav-link" href="~/Contact/contact">Liên Hệ Với Chúng Tôi</a></li>
                     </ul>
                 </div>
             </div>
@@ -101,7 +103,8 @@
             </div>
         </div>
     </div>
-    <!-- Banner Ends Here -->
+
+
 
     @RenderBody()
 
@@ -173,16 +176,16 @@
 
             </div>
         </div>
+
     </footer>
-
-
     <!-- Bootstrap core JavaScript -->
-    <script src="~/assets/vendor/jquery/jquery.min.js"></script>
-    <script src="~/assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-
+    <script src="~/vendor/jquery/jquery.min.js"></script>
+    <script src="~/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
 
     <!-- Additional Scripts -->
     <script src="~/assets/js/custom.js"></script>
     <script src="~/assets/js/owl.js"></script>
+
+    @RenderSection("Footer", required: false);
 </body>
 </html>

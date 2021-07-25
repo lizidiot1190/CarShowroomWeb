@@ -9,6 +9,8 @@ namespace Model.EF
     [Table("Contact")]
     public partial class Contact
     {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int id { get; set; }
 
         [StringLength(50)]
@@ -20,13 +22,13 @@ namespace Model.EF
         [StringLength(50)]
         public string email { get; set; }
 
-        [StringLength(50)]
+        [StringLength(250)]
         public string address { get; set; }
 
         [StringLength(250)]
         public string content { get; set; }
 
-        public DateTime? createdDate { get; set; }
+        public DateTime createdDate { get; set; }
 
         public bool? status { get; set; }
     }

@@ -23,7 +23,7 @@ namespace CarShowroom.Models
     {
         public DbSet<ProductCategory> ProductCategories { get; set; }
         public DbSet<Category> Categories { get; set; }
-        public DbSet<Contact> Contacts { get; set; }
+        
         public DbSet<Content> Contents { get; set; }
         public DbSet<Info> Infos { get; set; }
         public DbSet<Product> Products { get; set; }
@@ -33,6 +33,9 @@ namespace CarShowroom.Models
         public DbSet<User> Users { get; set; }
         public DbSet<Founder> Founders { get; set; }
         public DbSet<Rating> Ratings { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
+       
+
         public ApplicationDbContext()
             : base("DefaultConnection")
         {
