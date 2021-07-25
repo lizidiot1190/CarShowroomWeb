@@ -1,4 +1,5 @@
-﻿using System;
+﻿using CarShowroom.DAO;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -10,8 +11,19 @@ namespace CarShowroom.Controllers
     {
         public ActionResult Index()
         {
+            var productdao = new ProductDAO();
+            ViewBag.HotProducts = productdao.ListHotProducts(6);
+            var ratingdao = new RatingDAO();
+            ViewBag.Rates = ratingdao.ListAllRatings();
+            var contentdao = new ContentDAO();
+            ViewBag.Contents = contentdao.ListNewContents(3);
+            var showinfo = new InfoDAO();
+            ViewBag.Infos = showinfo.ShowInfo();
+            var slidedao = new SlideDAO();
+            ViewBag.Slides = slidedao.ShowSlideList();
             return View();
         }
+        
 
         public ActionResult About()
         {
@@ -26,5 +38,6 @@ namespace CarShowroom.Controllers
 
             return View();
         }
+        
     }
 }

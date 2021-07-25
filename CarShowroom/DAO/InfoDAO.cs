@@ -16,6 +16,9 @@ namespace CarShowroom.DAO
         {
             db = new ApplicationDbContext();
         }
+        public List<Info> ShowInfo()
+        {
+            return db.Infos.Where(y => y.status != null).OrderBy(x => x.id).ToList();
 
         public long Insert(Info entity)
         {

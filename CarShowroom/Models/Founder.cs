@@ -20,5 +20,11 @@ namespace CarShowroom.Models
 
         [StringLength(255)]
         public string slogan { get; set; }
+        [StringLength(255)]
+        public string link1 { get; set; }
+        [StringLength(255)]
+        public string link2 { get; set; }
+        [StringLength(255)]
+        public string position { get; set; }
     }
 }

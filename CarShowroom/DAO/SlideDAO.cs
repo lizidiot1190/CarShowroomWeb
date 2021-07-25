@@ -16,6 +16,10 @@ namespace CarShowroom.DAO
         {
             db = new ApplicationDbContext();
         }
+        public List<Slide> ShowSlideList()
+        {
+            return db.Slides.OrderBy(x => x.id).ToList();
+        }
 
         public long Insert(Slide entity)
         {

@@ -1,3 +1,7 @@
+
+using System.Web;
+using System.Text;
+using System.Threading.Tasks;
 ﻿using CarShowroom.Models;
 using Model.EF;
 using PagedList;
@@ -15,6 +19,11 @@ namespace CarShowroom.DAO
         public ProductDAO()
         {
             db = new ApplicationDbContext();
+        }
+
+        public List<Product> ListHotProducts(int top)
+        {
+            return db.Products.Where(x => x.topHot != null && x.topHot > DateTime.Now).OrderByDescending(x => x.id).Take(top).ToList();
         }
 
         public long Insert(Product entity)

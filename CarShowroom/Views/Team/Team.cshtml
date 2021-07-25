@@ -1,0 +1,53 @@
+﻿
+@{
+    ViewBag.Title = "Team";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var AllMembers = (List<CarShowroom.Models.Founder>)ViewBag.Teams;
+}
+
+<div class="page-heading about-heading header-text" style="background-image: url(assets/images/heading-2-1920x500.jpg);">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-content">
+                    <h4>THACO VIỆT NAM</h4>
+                    <h2>NHÀ SÁNG LẬP</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="team-members">
+    <div class="container">
+        <div class="row">
+            @foreach (var item in AllMembers)
+            {
+                <div class="col-md-4">
+                    <div class="team-member">
+                        <div class="thumb-container">
+                            <img src="@item.image" alt="" width="100px" height="100px">
+                            <div class="hover-effect">
+                                <div class="hover-content">
+                                    <ul class="social-icons">
+                                        <li><a href="@item.link1"><i class="fa fa-facebook"></i></a></li>
+                                        <li><a href="@item.link2"><i class="fa fa-twitter"></i></a></li>
+
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="down-content">
+                            <h4>@item.name </h4>
+                            <span>@item.position</span>
+                            <p>@item.slogan</p>
+                        </div>                        
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>
+
