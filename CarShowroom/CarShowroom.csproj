@@ -209,6 +209,7 @@
     <Compile Include="Common\Encryption.cs" />
     <Compile Include="Common\UserLogin.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ProductController.cs" />
     <Compile Include="DAO\ContentCategoryDAO.cs" />
     <Compile Include="DAO\ContentDAO.cs" />
     <Compile Include="DAO\FounderDAO.cs" />
@@ -264,6 +265,14 @@
     <Compile Include="Migrations\202107241157183_xetai.cs" />
     <Compile Include="Migrations\202107241157183_xetai.Designer.cs">
       <DependentUpon>202107241157183_xetai.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107242245559_asndsand.cs" />
+    <Compile Include="Migrations\202107242245559_asndsand.Designer.cs">
+      <DependentUpon>202107242245559_asndsand.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202107242250360_asndsand1.cs" />
+    <Compile Include="Migrations\202107242250360_asndsand1.Designer.cs">
+      <DependentUpon>202107242250360_asndsand1.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ContentCategory.cs" />
@@ -337,6 +346,7 @@
     <Content Include="assets\home\vendor\jquery\jquery.min.js" />
     <Content Include="assets\home\vendor\jquery\jquery.slim.js" />
     <Content Include="assets\home\vendor\jquery\jquery.slim.min.js" />
+    <Content Include="assets\img\header\banner.png" />
     <Content Include="assets\img\undraw_posting_photo.svg" />
     <Content Include="assets\img\undraw_profile.svg" />
     <Content Include="assets\img\undraw_profile_1.svg" />
@@ -2246,6 +2256,8 @@
     <Content Include="assets\home\vendor\bootstrap\js\bootstrap.min.js.map" />
     <Content Include="assets\home\vendor\jquery\jquery.min.map" />
     <Content Include="assets\home\vendor\jquery\jquery.slim.min.map" />
+    <Content Include="Areas\Admin\Views\Product\Create.cshtml" />
+    <Content Include="Areas\Admin\Views\Product\Edit.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2270,6 +2282,8 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Product\Detail.cshtml" />
+    <Content Include="Views\Product\ListAll.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -2326,6 +2340,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202107241157183_xetai.resx">
       <DependentUpon>202107241157183_xetai.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107242245559_asndsand.resx">
+      <DependentUpon>202107242245559_asndsand.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202107242250360_asndsand1.resx">
+      <DependentUpon>202107242250360_asndsand1.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>

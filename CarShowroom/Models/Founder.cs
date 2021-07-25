@@ -8,7 +8,8 @@ using System.Web;
 namespace CarShowroom.Models
 {
     public class Founder
-    {   [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+    {
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int id { get; set; }
         [StringLength(255)]
         public string name{ get; set; }

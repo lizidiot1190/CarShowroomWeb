@@ -43,7 +43,6 @@ namespace Model.EF
         public decimal? price { get; set; }
 
         public decimal? promotionPrice { get; set; }
-
         public long? categoryID { get; set; }
 
         [StringLength(250)]

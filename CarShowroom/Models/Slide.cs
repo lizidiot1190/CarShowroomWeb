@@ -10,7 +10,7 @@ namespace Model.EF
     [Table("Slide")]
     public partial class Slide
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.None)]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int id { get; set; }
 
         [StringLength(250)]

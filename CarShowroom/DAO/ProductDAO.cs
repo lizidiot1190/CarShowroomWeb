@@ -120,5 +120,12 @@ namespace CarShowroom.DAO
         {
             return db.Products.Find(id);
         }
+
+        
+
+        public List<Product> ListAllProduct()
+        {
+            return db.Products.Where(p=>p.status== true).OrderByDescending(p => p.categoryID).ToList();
+        }
     }
 }

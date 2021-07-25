@@ -103,5 +103,10 @@ namespace CarShowroom.DAO
         {
             return db.Slides.Find(id);
         }
+        public Slide PickAnImage()
+        {
+            return db.Slides.AsEnumerable().FirstOrDefault(p => p.status == true);
+        }
+
     }
 }
