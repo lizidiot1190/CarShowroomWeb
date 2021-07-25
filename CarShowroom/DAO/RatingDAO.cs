@@ -5,15 +5,23 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Web;
+using Model.EF;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace CarShowroom.DAO
 {
     public class RatingDAO
     {
-        private ApplicationDbContext db;
+        ApplicationDbContext db = null;
         public RatingDAO()
         {
             db = new ApplicationDbContext();
+        }
+
+        public List<Rating> ListAllRatings()
+        {
+            return db.Ratings.OrderByDescending(x => x.id).ToList();
         }
 
         public long Insert(Rating entity)
@@ -87,6 +95,7 @@ namespace CarShowroom.DAO
                 return false;
             }
         }
+        
 
 
         public IEnumerable<Rating>ListAllPage(int page, int pageSize)

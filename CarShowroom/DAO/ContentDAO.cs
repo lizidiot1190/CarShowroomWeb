@@ -11,10 +11,14 @@ namespace CarShowroom.DAO
 {
     public class ContentDAO
     {
-        ApplicationDbContext db;
+        ApplicationDbContext db = null;
         public ContentDAO()
         {
             db = new ApplicationDbContext();
+        }
+        public List<Content> ListNewContents(int top)
+        {
+            return db.Contents.Where(x => x.topHot != null && x.topHot > DateTime.Now).OrderByDescending(x => x.id).Take(top).ToList();
         }
 
         public long Insert(Content entity)

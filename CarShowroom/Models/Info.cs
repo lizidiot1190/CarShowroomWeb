@@ -18,5 +18,6 @@ namespace Model.EF
         public string content { get; set; }
 
         public bool? status { get; set; }
+        public bool? link{ get; set; }
     }
 }
