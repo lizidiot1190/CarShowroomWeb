@@ -1,6 +1,7 @@
 ﻿@model PagedList.IPagedList<Model.EF.Product>
 @using PagedList.Mvc;
 <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+<script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.js")" type="text/javascript"></script>
 @{ ViewBag.Title = "Quản lý sản phẩm"; Layout = "~/Areas/Admin/Views/Shared/_Layouts.cshtml"; }
 @section header{
     Danh sách Sản phẩm
@@ -43,9 +44,10 @@
                                 <a href="~/Admin/Product/Edit/@item.id">Sửa</a>
                                 @Ajax.ActionLink("Xóa", "Delete", new { @id = item.id }, new AjaxOptions
                            {
-                                Confirm = "Bạn có chắc chắn xóa không?",
-                                OnComplete = "$('row_" + @item.id + "').remove()",
-                                HttpMethod = "Delete"
+                               Confirm = "Bạn có chắc chắn xóa không?",
+                               OnComplete = "$('row_" + @item.id + "').remove()",
+                               OnSuccess = "window.location.reload()",
+                               HttpMethod = "Delete"
                            })
                             </td>
                             <td>@item.metaTitle</td>

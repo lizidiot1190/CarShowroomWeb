@@ -21,8 +21,7 @@
 }
 
 img {
-    width: 333px;
-    height: 150px;
+    width: 300px;
 }
 
 .h-right {
@@ -38,6 +37,7 @@ img {
 }
 
 h4 {
+    text-align:center;
     color: rgb(39, 1, 7);
 }
 

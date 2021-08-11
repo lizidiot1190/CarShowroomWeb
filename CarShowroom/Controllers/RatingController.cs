@@ -15,6 +15,8 @@ namespace CarShowroom.Controllers
         {
             var ratingdao = new RatingDAO();
             ViewBag.Rates = ratingdao.ListAllRatings();
+            var image = new SlideDAO().PickAnImage();
+            ViewBag.Image = image;
             return View();
         }
     }

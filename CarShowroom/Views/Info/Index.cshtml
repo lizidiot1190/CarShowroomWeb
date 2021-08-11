@@ -2,7 +2,7 @@
 @{
     ViewBag.Title = "Index";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    var ShowInfo = (List<Model.EF.Info>)ViewBag.Infos;
+    var ShowInfo = (List<Model.EF.Info>)ViewBag.NoLinkInfo;
     var image = (Model.EF.Slide)ViewBag.Image;
 }
 @section AboutUs{
@@ -32,7 +32,7 @@
                 </div>
                 <div class="col-md-6">
                     <div class="right-image-custom">
-                        <a href="#"><img src="@Url.Content(item.image)" width="100" height="100" /></a>
+                        <a href="#"><img src="@Url.Content(item.image)" /></a>
                     </div>
                 </div>
                 <div class="col-md-6">
@@ -40,8 +40,7 @@
                         <h4>@item.name</h4>
                         <p>@item.content</p>
                         <ul class="social-icons">
-                            <li><a href="https://www.facebook.com/vhh000000/"><i class="fa fa-facebook"></i></a></li>
-                            <li><a href="https://twitter.com/vhh0106"><i class="fa fa-twitter"></i></a></li>
+                            <li><a href="https://www.facebook.com/Thaco-Tr%C6%B0%E1%BB%9Dng-H%E1%BA%A3i-C%C3%A0-Mau-2214376198825088"><i class="fa fa-facebook"></i></a></li>
 
                         </ul>
                     </div>

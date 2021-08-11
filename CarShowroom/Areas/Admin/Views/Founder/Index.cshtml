@@ -1,6 +1,7 @@
 ﻿@model PagedList.IPagedList<CarShowroom.Models.Founder>
 @using PagedList.Mvc;
 <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+<script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.js")" type="text/javascript"></script>
 <script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.min.js")" type="text/javascript"></script>
 @{
     ViewBag.Title = "Quản lý nhà sáng";
@@ -40,9 +41,9 @@
                             @Ajax.ActionLink("Xóa", "Delete", new { @id = item.id }, new AjaxOptions
                        {
                            Confirm = "ban có chắc chắn xóa không?",
-                                OnComplete = "$('row_" + @item.id + "').remove()",
-                                OnSuccess = "windows.location.href='Founder/Index'",
-                                HttpMethod = "Delete"
+                           OnComplete = "$('row_" + @item.id + "').remove()",
+                           OnSuccess = "window.location.reload()",
+                           HttpMethod = "Delete"
                        })
                         </td>
                         <td>@item.name</td>

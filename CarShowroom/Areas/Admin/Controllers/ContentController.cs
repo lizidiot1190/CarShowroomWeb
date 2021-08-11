@@ -76,7 +76,7 @@ namespace CarShowroom.Areas.Admin.Controllers
                 var result = DAO.Delete(id);
                 if (result)
                 {
-                    return RedirectToAction("Content", "Index");
+                    return RedirectToAction("Index", "Content");
                 }
                 else
                 {

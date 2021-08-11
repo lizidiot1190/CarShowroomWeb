@@ -26,12 +26,6 @@ namespace CarShowroom.DAO
 
         public long Insert(Rating entity)
         {
-            string fileName = Path.GetFileNameWithoutExtension(entity.imageFile.FileName);
-            string extension = Path.GetExtension(entity.imageFile.FileName);
-            fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
-            entity.image = "~/assets/img/rating/" + fileName;
-            fileName = Path.Combine(HttpContext.Current.Server.MapPath("~/assets/img/rating/"), fileName);
-            entity.imageFile.SaveAs(fileName);
             db.Ratings.Add(entity);
             db.SaveChanges();
             return entity.id;
@@ -39,44 +33,17 @@ namespace CarShowroom.DAO
 
         public bool Update(Rating entity)
         {
-
-            if (entity.imageFile == null)
+            try
             {
-                try
-                {
-                    var rating = db.Ratings.Find(entity.id);
-                    rating.name = entity.name;
-                    rating.comment = entity.comment;
-                    db.SaveChanges();
-                    return true;
-                }
-                catch
-                {
-                    return false;
-                }
+                var rating = db.Ratings.Find(entity.id);
+                rating.name = entity.name;
+                rating.comment = entity.comment;
+                db.SaveChanges();
+                return true;
             }
-            else
+            catch (Exception)
             {
-                string fileName = Path.GetFileNameWithoutExtension(entity.imageFile.FileName);
-                string extension = Path.GetExtension(entity.imageFile.FileName);
-                fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
-                entity.image = "~/assets/img/rating/" + fileName;
-                fileName = Path.Combine(HttpContext.Current.Server.MapPath("~/assets/img/rating/"), fileName);
-                try
-                {
-                    var rating = db.Ratings.Find(entity.id);
-                    rating.name = entity.name;
-                    rating.image = entity.image;
-                    rating.imageFile = entity.imageFile;
-                    rating.imageFile.SaveAs(fileName);
-                    rating.comment = entity.comment;
-                    db.SaveChanges();
-                    return true;
-                }
-                catch (Exception)
-                {
-                    return false;
-                }
+                return false;
             }
 
         }
@@ -95,7 +62,7 @@ namespace CarShowroom.DAO
                 return false;
             }
         }
-        
+
 
 
         public IEnumerable<Rating> ListAllPage(int page, int pageSize)

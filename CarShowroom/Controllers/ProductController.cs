@@ -28,18 +28,33 @@ namespace CarShowroom.Controllers
 
         public ActionResult ListAll()
         {
-            // var list = new ProductCategoryDAO().ViewDetail(cateId);
-            //ViewBag.List = list;
             var listCat = new ProductCategoryDAO().ListCategory();
             ViewBag.List = listCat;
             var image = new SlideDAO().PickAnImage();
             ViewBag.Image = image;
-            var list = new ProductDAO().ListAllProduct();
+            
+            var DAO = new ProductDAO();
+            List<Model.EF.Product> list = new List<Model.EF.Product>();
+            foreach (var item in listCat)
+            {
+                var take = DAO.ListAllProduct(4, item.id);
+                list.AddRange(take);
+            }
             return View(list);
+        }
+
+        public ActionResult ListHotProduct()
+        {
+            var image = new SlideDAO().PickAnImage();
+            ViewBag.Image = image;
+            var hotProduct = new ProductDAO().AllHotProducts();
+            return View(hotProduct);
         }
 
         public ActionResult Detail(int id)
         {
+            var item = new MoreImageDAO().GetItem(id);
+            ViewBag.Item = item;
             var product = new ProductDAO().ViewDetail(id);
             return View(product);
         }

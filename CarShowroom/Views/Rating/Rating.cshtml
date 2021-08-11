@@ -3,9 +3,10 @@
     ViewBag.Title = "Rating";
     Layout = "~/Views/Shared/_Layout.cshtml";
     var ListAllRatings = (List<CarShowroom.Models.Rating>)ViewBag.Rates;
+    var image = (Model.EF.Slide)ViewBag.Image;
 }
 
-<div class="page-heading about-heading header-text" style="background-image: url(assets/home/images/heading-3-1920x500.jpg);">
+<div class="page-heading about-heading header-text" style="background-image: url('@image.image.Substring(1)');">
     <div class="container">
         <div class="row">
             <div class="col-md-12">

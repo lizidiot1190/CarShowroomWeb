@@ -14,12 +14,15 @@
         public long id { get; set; }
 
         [StringLength(250)]
+        [DisplayName("Tên tin tức")]
         public string name { get; set; }
 
         [StringLength(250)]
+        [DisplayName("Thẻ tiêu đề")]
         public string metaTitle { get; set; }
 
         [StringLength(500)]
+        [DisplayName("Nội dung")]
         public string description { get; set; }
 
         [StringLength(250)]
@@ -27,7 +30,7 @@
         public string image { get; set; }
         [NotMapped]
         public HttpPostedFileBase imageFile { get; set; }
-
+        [DisplayName("Id danh mục tin tức")]
         public long? categoryID { get; set; }
 
         [StringLength(250)]
@@ -36,8 +39,9 @@
         [StringLength(250)]
         public string metaDescription { get; set; }
 
+        [DisplayName("Trạng thái")]
         public bool? status { get; set; }
-
+        [DisplayName("Đưa lên trang bìa(ngày/tháng/năm)")]
         public DateTime? topHot { get; set; }
     }
 }

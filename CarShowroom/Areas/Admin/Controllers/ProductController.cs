@@ -21,6 +21,14 @@ namespace CarShowroom.Areas.Admin.Controllers
         [HttpGet]
         public ActionResult Create()
         {
+            var category = new ProductCategoryDAO().ListCategory();
+            ViewBag.Category = (from item in category
+                                select new SelectListItem
+                                {
+                                    Text = item.name,
+                                    Value = item.id.ToString()
+
+                                });
             return View();
         }
         [HttpPost]
@@ -46,6 +54,14 @@ namespace CarShowroom.Areas.Admin.Controllers
         public ActionResult Edit(int id)
         {
             var product = new ProductDAO().ViewDetail(id);
+            var category = new ProductCategoryDAO().ListCategory();
+            ViewBag.Category = (from item in category
+                                select new SelectListItem
+                                {
+                                    Text = item.name,
+                                    Value = item.id.ToString()
+
+                                });
             return View(product);
         }
 

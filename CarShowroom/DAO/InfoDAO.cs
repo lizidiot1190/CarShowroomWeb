@@ -17,10 +17,9 @@ namespace CarShowroom.DAO
             db = new ApplicationDbContext();
         }
 
-        public List<Info> ShowInfo()
-        {
-            return db.Infos.Where(y => y.status !=null).OrderBy(x => x.id).ToList();
-        }
+
+
+        
 
         public long Insert(Info entity)
         {
@@ -106,6 +105,16 @@ namespace CarShowroom.DAO
         public Info ViewDetail(int id)
         {
             return db.Infos.Find(id);
+        }
+
+        public List<Info> ShowInfo()
+        {
+            return db.Infos.Where(y => y.status == true).OrderBy(x => x.id).ToList();
+        }
+
+        public List<Info> GetInfoWithouLink()
+        {
+            return db.Infos.Where(p => p.status == true && p.link == false).OrderByDescending(p => p.id).ToList();
         }
     }
 }

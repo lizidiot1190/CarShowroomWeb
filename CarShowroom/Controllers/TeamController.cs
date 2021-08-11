@@ -14,6 +14,8 @@ namespace CarShowroom.Controllers
         {
             var teamdao = new TeamDAO();
             ViewBag.Teams = teamdao.AllMembers();
+            var image = new SlideDAO().PickAnImage();
+            ViewBag.Image = image;
             return View();
         }
     }

@@ -1,0 +1,165 @@
+﻿@model Model.EF.Contact
+@{
+    ViewBag.Title = "Liên hệ";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var image = (Model.EF.Slide)ViewBag.Image;
+}
+
+
+
+<div class="page-heading about-heading header-text" style="background-image: url('@image.image.Substring(1)');">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="text-content">
+                    <h4>Thaco Việt Nam</h4>
+                    <h2>Liên hệ</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@if (TempData["AlertMessage"] != null)
+{
+    <div id="AlertBox" class="alert @TempData["AlertType"] hide" role="alert">
+        @TempData["AlertMessage"]
+    </div>
+}
+
+<style>
+    #map {
+        height: 600px;
+    }
+</style>
+@section Footer{
+    <script src="https://maps.googleapis.com/maps/api/js?AIzaSyCtuemkbZfX7MdT9sekZA5Mg1DV84ifJdc&callback=initMap"></script>
+    <script src="~/assets/home/scripts/ContactController.js"></script>
+    <script>
+        function initMap() {
+            const uluru = { lat: 9.192392849813837, lng: 105.15115159485728 };
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 15,
+                center: uluru,
+            });
+            const contentString = '475A Điện Biên Phủ';
+            const infowindow = new google.maps.InfoWindow({
+                content: contentString,
+            });
+            const marker = new google.maps.Marker({
+                position: uluru,
+                map,
+                title: "Địa chỉ",
+            });
+            marker.addListener("click", () => {
+                infowindow.open({
+                    anchor: marker,
+                    map,
+                    shouldFocus: false,
+                });
+            });
+        }
+        google.maps.event.addDomListener(window, 'load', initMap);
+    </script>
+}
+<div class="find-us">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-heading">
+                    <h2>Vị trí của chúng tôi trên bản đồ</h2>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div id="map">
+                </div>
+            </div>
+            <div class="col-md-4">
+                <div class="left-content">
+
+                    <h4>Về Văn Phòng của chúng tôi</h4>
+                    <p>Nguyễn Trãi<br>Phường 9, Thành phố Cà Mau</p>
+                    <p>Email: hoangmycm656@gmail.com</p>
+                    <p>Số điện thoại : 0917 946 616</p>
+                    <ul class="social-icons">
+                        <li><a href="https://www.facebook.com/Thaco-Tr%C6%B0%E1%BB%9Dng-H%E1%BA%A3i-C%C3%A0-Mau-2214376198825088"><i class="fa fa-facebook"></i></a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div class="send-message">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-heading">
+                    <h2>Gửi Tin Nhắn Cho Chúng Tôi</h2>
+                </div>
+            </div>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                <div class="col-md-8">
+                    <div class="contact-form">
+                        <div class="row">
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.name, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-8">
+                                        @Html.EditorFor(model => model.name, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.name, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.phoneNumber, htmlAttributes: new { @class = "control-label col-md-4" })
+                                    <div class="col-md-8">
+                                        @Html.EditorFor(model => model.phoneNumber, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.phoneNumber, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.email, htmlAttributes: new { @class = "control-label col-md-2" })
+                                    <div class="col-md-8">
+                                        @Html.EditorFor(model => model.email, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.email, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 col-md-12 col-sm-12">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.address, htmlAttributes: new { @class = "control-label col-md-4" })
+                                    <div class="col-md-8">
+                                        @Html.EditorFor(model => model.address, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.address, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-lg-12 ">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.content, htmlAttributes: new { @class = "control-label col-md-4" })
+                                    <div class="col-md-8">
+                                        @Html.EditorFor(model => model.content, new { htmlAttributes = new { @class = "form-control" } })
+                                        @Html.ValidationMessageFor(model => model.content, "", new { @class = "text-danger" })
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-md-8">
+                                <button type="submit" id="form-submit" class="filled-button">Gửi Tin Nhắn</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>

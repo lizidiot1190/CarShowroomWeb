@@ -1,0 +1,63 @@
+﻿@model List<Model.EF.Product>
+@{
+    ViewBag.Title = "ListHotProduct";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var image = (Model.EF.Slide)ViewBag.Image;
+}
+
+<div class="page-heading about-heading header-text" style="background-image: url('@image.image.Substring(1)');">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+            </div>
+        </div>
+    </div>
+</div>
+<div class="latest-products">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="section-heading">
+                    <h2>Tất cả sản phẩm nổi bật</h2>
+                </div>
+            </div>
+
+            @foreach (var item in Model)
+            {
+                var url = "/chi-tiet/" + item.metaTitle + "-" + item.id;
+                <div class="col-lg-3 col-md-6">
+                    <div class="product-item">
+                        <a href="@url"><img src="@Url.Content(item.image)" alt=""></a>
+                        <div class="down-content">
+                            <a href="@url"><h4>@item.name</h4></a>
+
+                            <h6>
+                                @if (item.promotionPrice != null)
+                                {
+                                    <del>@(item.price.Value.ToString("N0")+" VND")</del> <strong class="text-primary">  @(item.promotionPrice.Value.ToString("N0")+" VND")</strong>
+                                }
+                                else
+                                {
+
+                                    @(item.price.HasValue ? item.price.Value.ToString("N0") + " VND" : "Liên hệ: 0917946616");
+                                }
+                            </h6>
+
+                            <p>@item.taiTrong &nbsp;/&nbsp; @item.nhienLieu &nbsp;/&nbsp; @item.namSX &nbsp;</p>
+
+                            <small>
+                                <strong title="Loại thùng"><i class="fa fa-dashboard"></i> @item.loaiThung</strong> &nbsp;&nbsp;&nbsp;&nbsp;
+                                <strong title="Hình thức"><i class="fa fa-cube"></i> @item.nhapKhau</strong>&nbsp;&nbsp;&nbsp;&nbsp;
+                                <strong title="Loại hộp số"><i class="fa fa-cog"></i> @item.hopSo</strong>
+                            </small>
+                        </div>
+                    </div>
+                </div>
+
+            }
+
+
+        </div>
+    </div>
+</div>
+

@@ -21,24 +21,36 @@
         <div class="row">
             @foreach (var category in listCategory)
             {
+                var url1 = "/danh-sach-san-pham/"+category.metaTitle + "-" + category.id;
                 <div class="col-md-12">
                     <div class="section-heading">
                         <h2>@category.name</h2>
-                        <a href="~/Product/ListByCatId/@category.id">View more <i class="fa fa-angle-right"></i></a>
+                        <a href="@url1">Xem thêm <i class="fa fa-angle-right"></i></a>
                     </div>
                 </div>
-
                 foreach (var item in Model)
                 {
+
                     if (item.categoryID == @category.id)
                     {
+                        var url = "/chi-tiet/" + item.metaTitle + "-" + item.id;
                         <div class="col-lg-3 col-md-5">
                             <div class="product-item">
-                                <a href="~/Product/Detail/@item.id"><img src="@Url.Content(item.image)" alt=""></a>
+                                <a href="@url"><img src="@Url.Content(item.image)" alt=""></a>
                                 <div class="down-content">
-                                    <a href="~/Product/Detail/@item.id"><h4>@item.name</h4></a>
+                                    <a href="@url"><h4>@item.name</h4></a>
 
-                                    <h6><small><del> @item.price</del></small> @item.promotionPrice</h6>
+                                    <h6>
+                                        @if (item.promotionPrice != null)
+                                        {
+                                            <del>@(item.price.Value.ToString("N0") + " VND")</del> <strong class="text-primary">  @(item.promotionPrice.Value.ToString("N0") + " VND")</strong>
+                                        }
+                                        else
+                                        {
+
+                                            @(item.price.HasValue ? item.price.Value.ToString("N0") + " VND" : "Liên hệ: 0917946616");
+                                        }
+                                    </h6>
 
                                     <p>@item.taiTrong &nbsp;/&nbsp; @item.nhienLieu &nbsp;/&nbsp; @item.namSX &nbsp;</p>
 
@@ -52,11 +64,12 @@
                         </div>
                     }
 
+
+
                 }
 
 
             }
-
 
         </div>
     </div>

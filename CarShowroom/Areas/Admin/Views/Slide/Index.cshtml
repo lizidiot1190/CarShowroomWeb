@@ -39,9 +39,9 @@
                                 @Ajax.ActionLink("Xóa", "Delete", new { @id = item.id }, new AjaxOptions
                            {
                                Confirm = "Bạn có chắc chắn muốn xóa không?",
-                                    OnComplete = "$('row_" + @item.id + "').remove()",
-                                    OnSuccess = "windows.location.href='Slide/Index'",
-                                    HttpMethod = "Delete"
+                               OnComplete = "$('row_" + @item.id + "').remove()",
+                               OnSuccess = "window.location.reload()",
+                               HttpMethod = "Delete"
                            })
                             </td>
                             <td><img src="@Url.Content(item.image)" height="100" /></td>

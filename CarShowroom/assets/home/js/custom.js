@@ -1,90 +1,94 @@
-jQuery( document ).ready(function( $ ) {
+jQuery(document).ready(function ($) {
 
 
-	"use strict";
+    "use strict";
 
-        // Page loading animation
+    // Page loading animation
+    $(function () {
+        $('#AlertBox').removeClass('hide');
+        $('#AlertBox').delay(2000).slideUp(500);
+    }
+    );
 
-        $("#preloader").animate({
-            'opacity': '0'
-        }, 600, function(){
-            setTimeout(function(){
-                $("#preloader").css("visibility", "hidden").fadeOut();
-            }, 300);
-        });
-        
+    $("#preloader").animate({
+        'opacity': '0'
+    }, 600, function () {
+        setTimeout(function () {
+            $("#preloader").css("visibility", "hidden").fadeOut();
+        }, 300);
+    });
 
-        $(window).scroll(function() {
-          var scroll = $(window).scrollTop();
-          var box = $('.header-text').height();
-          var header = $('header').height();
+    $(window).scroll(function () {
+        var scroll = $(window).scrollTop();
+        var box = $('.header-text').height();
+        var header = $('header').height();
 
-          if (scroll >= box - header) {
+        if (scroll >= box - header) {
             $("header").addClass("background-header");
-          } else {
+        } else {
             $("header").removeClass("background-header");
-          }
-        });
-        
-        if ($('.owl-clients').length) {
-            $('.owl-clients').owlCarousel({
-                loop: true,
-                nav: false,
-                dots: true,
-                items: 1,
-                margin: 30,
-                autoplay: false,
-                smartSpeed: 700,
-                autoplayTimeout: 6000,
-                responsive: {
-                    0: {
-                        items: 1,
-                        margin: 0
-                    },
-                    460: {
-                        items: 1,
-                        margin: 0
-                    },
-                    576: {
-                        items: 2,
-                        margin: 20
-                    },
-                    992: {
-                        items: 3,
-                        margin: 30
-                    }
-                }
-            });
         }
+    });
 
-        if ($('.owl-banner').length) {
-            $('.owl-banner').owlCarousel({
-                loop: true,
-                nav: false,
-                dots: true,
-                items: 1,
-                margin: 0,
-                autoplay: false,
-                smartSpeed: 700,
-                autoplayTimeout: 6000,
-                responsive: {
-                    0: {
-                        items: 1,
-                        margin: 0
-                    },
-                    460: {
-                        items: 1,
-                        margin: 0
-                    },
-                    576: {
-                        items: 1,
-                        margin: 20
-                    },
-                    992: {
-                        items: 1,
-                        margin: 30
-                    }
+    if ($('.owl-clients').length) {
+        $('.owl-clients').owlCarousel({
+            loop: true,
+            nav: false,
+            dots: true,
+            items: 1,
+            margin: 30,
+            autoplay: true,
+            smartSpeed: 700,
+            autoplayTimeout: 2000,
+            responsive: {
+                0: {
+                    items: 1,
+                    margin: 0
+                },
+                460: {
+                    items: 1,
+                    margin: 0
+                },
+                576: {
+                    items: 2,
+                    margin: 20
+                },
+                992: {
+                    items: 3,
+                    margin: 30
                 }
-            });
-        }
+            }
+        });
+    }
+
+    if ($('.owl-banner').length) {
+        $('.owl-banner').owlCarousel({
+            loop: true,
+            nav: false,
+            dots: true,
+            items: 1,
+            margin: 0,
+            autoplay: true,
+            smartSpeed: 700,
+            autoplayTimeout: 4000,
+            responsive: {
+                0: {
+                    items: 1,
+                    margin: 0
+                },
+                460: {
+                    items: 1,
+                    margin: 0
+                },
+                576: {
+                    items: 1,
+                    margin: 20
+                },
+                992: {
+                    items: 1,
+                    margin: 30
+                }
+            }
+        });
+    }
 });

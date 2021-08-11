@@ -3,7 +3,8 @@
 @{
     ViewBag.Title = "Detail";
     Layout = "~/Views/Shared/_Layout.cshtml";
-    
+    var item = (CarShowroom.Models.MoreProductImage)ViewBag.Item;
+
 }
 
 <div class="page-heading about-heading header-text" style="background-image: url(@Model.image.Substring(1));">
@@ -11,7 +12,19 @@
         <div class="row">
             <div class="col-md-12">
                 <div class="text-content">
-                    <h4><del>@Model.price</del> <strong class="text-primary">@Model.promotionPrice</strong></h4>
+                    <h4>
+                        <span>
+                            @if (Model.promotionPrice != null)
+                            {
+                                <del>@(Model.price.Value.ToString("N0")+" VND")</del> <strong class="text-primary">  @(Model.promotionPrice.Value.ToString("N0")+" VND")</strong>
+                            }
+                            else
+                            {
+
+                                @(Model.price.HasValue ? Model.price.Value.ToString("N0") + " VND" : "Liên hệ: 0917946616");
+                            }
+                        </span>
+                    </h4>
                     <h2>@Model.name</h2>
                 </div>
             </div>
@@ -28,43 +41,56 @@
                     <img src="@Url.Content(Model.image)" alt="" class="img-fluid wc-image" />
                 </div>
                 <br>
-                <div class="row">
-                    <div class="col-sm-4 col-6">
-                        <div>
-                            <img src="assets/images/product-1-370x270.jpg" alt="" class="img-fluid">
+                @if (item != null)
+                {
+                    <div class="row">
+                        <div class="col-sm-4 col-6">
+                            <div>
+                                <img src="@Url.Content(item.img1)" style="width:100%;cursor:pointer" onclick="onClick(this)" class="w3-hover-opacity">
+                            </div>
+                            <br>
                         </div>
-                        <br>
-                    </div>
-                    <div class="col-sm-4 col-6">
-                        <div>
-                            <img src="assets/images/product-2-370x270.jpg" alt="" class="img-fluid">
+                        <div class="col-sm-4 col-6">
+                            <div>
+                                <img src="@Url.Content(item.img2)" style="width:100%;cursor:pointer" onclick="onClick(this)" class="w3-hover-opacity">
+                            </div>
+                            <br>
                         </div>
-                        <br>
-                    </div>
-                    <div class="col-sm-4 col-6">
-                        <div>
-                            <img src="assets/images/product-3-370x270.jpg" alt="" class="img-fluid">
+                        <div class="col-sm-4 col-6">
+                            <div>
+                                <img src="@Url.Content(item.img3)" style="width:100%;cursor:pointer" onclick="onClick(this)" class="w3-hover-opacity">
+                            </div>
+                            <br>
                         </div>
-                        <br>
+                        <div class="col-sm-4 col-6">
+                            <div>
+                                <img src="@Url.Content(item.img4)" style="width:100%;cursor:pointer" onclick="onClick(this)" class="w3-hover-opacity">
+                            </div>
+                            <br>
+                        </div>
+                        <div class="col-sm-4 col-6">
+                            <div>
+                                <img src="@Url.Content(item.img5)" style="width:100%;cursor:pointer" onclick="onClick(this)" class="w3-hover-opacity">
+                            </div>
+                            <br>
+                        </div>
+                        <div class="col-sm-4 col-6">
+                            <div>
+                                <img src="@Url.Content(item.img6)" style="width:100%;cursor:pointer" onclick="onClick(this)" class="w3-hover-opacity">
+                            </div>
+                            <br>
+                        </div>
                     </div>
+                }
+                else
+                {
 
-                    <div class="col-sm-4 col-6">
-                        <div>
-                            <img src="assets/images/product-4-370x270.jpg" alt="" class="img-fluid">
-                        </div>
-                        <br>
-                    </div>
-                    <div class="col-sm-4 col-6">
-                        <div>
-                            <img src="assets/images/product-5-370x270.jpg" alt="" class="img-fluid">
-                        </div>
-                        <br>
-                    </div>
-                    <div class="col-sm-4 col-6">
-                        <div>
-                            <img src="assets/images/product-6-370x270.jpg" alt="" class="img-fluid">
-                        </div>
-                        <br>
+                }
+
+                <div id="modal01" class="w3-modal" onclick="this.style.display='none'">
+                    <span class="w3-button w3-hover-red w3-xlarge w3-display-topright">&times;</span>
+                    <div class="w3-modal-content w3-animate-zoom">
+                        <img id="img01" style="width:100%">
                     </div>
                 </div>
             </div>
@@ -128,46 +154,7 @@
                             </div>
                         </li>
 
-                        @*<li class="list-group-item">
-                            <div class="clearfix">
-                                <span class="pull-left">Power</span>
 
-                                <strong class="pull-right">85 hp</strong>
-                            </div>
-                        </li>
-
-
-                        <li class="list-group-item">
-                            <div class="clearfix">
-                                <span class="pull-left">Gearbox</span>
-
-                                <strong class="pull-right">Manual</strong>
-                            </div>
-                        </li>
-
-                        <li class="list-group-item">
-                            <div class="clearfix">
-                                <span class="pull-left">Number of seats</span>
-
-                                <strong class="pull-right">4</strong>
-                            </div>
-                        </li>
-
-                        <li class="list-group-item">
-                            <div class="clearfix">
-                                <span class="pull-left">Doors</span>
-
-                                <strong class="pull-right">2/3</strong>
-                            </div>
-                        </li>
-
-                        <li class="list-group-item">
-                            <div class="clearfix">
-                                <span class="pull-left">Color</span>
-
-                                <strong class="pull-right">Black</strong>
-                            </div>
-                        </li>*@
                     </ul>
                 </form>
             </div>
@@ -188,28 +175,32 @@
                 </div>
             </div>
 
-            @*<div class="col-md-6">
-                <div class="section-heading">
-                    <h2>Vehicle Extras</h2>
-                </div>
-
-                <div class="left-content">
-                    <p>- ABS <br>-Leather seats <br>-Power Assisted Steering <br>-Electric heated seats <br>-New HU and AU <br>-Xenon headlights</p>
-                </div>
-            </div>*@
-        </div>
-    </div>
-</div>
-
-<div class="section">
-    <div class="container">
-        <div class="row">
             <div class="col-md-6">
                 <div class="section-heading">
-                    <h2>Giá: <span>@(Model.price.HasValue? Model.price.Value.ToString("N0"): "Liên hệ")</span></h2>
-                </div>
+                    <h2>Giá:</h2>
 
+                </div>
+                <div>
+                    <h2>
+                        @if (Model.promotionPrice != null)
+                        {
+                            <del>@(Model.price.Value.ToString("N0")+" VND")</del> <strong class="text-primary">  @(Model.promotionPrice.Value.ToString("N0")+" VND")</strong>
+                        }
+                        else
+                        {
+
+                            @(Model.price.HasValue ? Model.price.Value.ToString("N0") + " VND" : "Liên hệ: 0917946616");
+                        }
+                    </h2>
+                </div>
             </div>
         </div>
     </div>
 </div>
+
+<script>
+    function onClick(element) {
+        document.getElementById("img01").src = element.src;
+        document.getElementById("modal01").style.display = "block";
+    }
+</script>

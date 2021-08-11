@@ -1,7 +1,8 @@
-namespace Model.EF
+﻿namespace Model.EF
 {
     using System;
     using System.Collections.Generic;
+    using System.ComponentModel;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
     using System.Data.Entity.Spatial;
@@ -12,15 +13,19 @@ namespace Model.EF
     {
         public int id { get; set; }
         [StringLength(250)]
+        [DisplayName("Tên thông tin")]
         public string name { get; set; }
         [StringLength(250)]
         [NotMapped]
         public HttpPostedFileBase imageFile { get; set; }
+        [DisplayName("Hình ảnh")]
         public string image { get; set; }
         [Column(TypeName = "ntext")]
+        [DisplayName("Mô tả nội dung")]
         public string content { get; set; }
-
+        [DisplayName("Trạng thái")]
         public bool? status { get; set; }
+        [DisplayName("Link tới địa chỉ google map")]
         public bool? link{ get; set; }
     }
 }

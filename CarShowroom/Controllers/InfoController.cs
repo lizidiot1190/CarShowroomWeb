@@ -17,6 +17,8 @@ namespace CarShowroom.Controllers
             ViewBag.Image = image;
             var showinfo = new InfoDAO();
             ViewBag.Infos = showinfo.ShowInfo();
+            var nolinkinfo = new InfoDAO().GetInfoWithouLink();
+            ViewBag.NoLinkInfo = nolinkinfo;
             return View();
         }
     }

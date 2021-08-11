@@ -8,7 +8,6 @@ using PagedList;
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Web;
 using System.IO;
 
 namespace CarShowroom.DAO
@@ -132,14 +131,19 @@ namespace CarShowroom.DAO
 
         
 
-        public List<Product> ListAllProduct()
+        public List<Product> ListAllProduct(int sl,long id)
         {
-            return db.Products.Where(p=>p.status== true).OrderByDescending(p => p.categoryID).ToList();
+            return db.Products.Where(p=>p.status== true && p.categoryID==id).OrderBy(p => p.categoryID).Take(sl).ToList();
         }
 
         public List<Product> ListByCatId(int id)
         {
             return db.Products.Where(p => p.status == true && p.categoryID == id).OrderByDescending(p => p.categoryID).ToList();
+        }
+
+        public List<Product> AllHotProducts()
+        {
+            return db.Products.Where(p => p.topHot > DateTime.Now).OrderBy(p => p.topHot).ToList();
         }
     }
 }

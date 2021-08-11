@@ -1,5 +1,6 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.Default.props')" />
   <Import Project="..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props" Condition="Exists('..\packages\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.2.0.1\build\net46\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <PropertyGroup>
@@ -25,6 +26,7 @@
     <UseGlobalApplicationHostFile />
     <NuGetPackageImportStamp>
     </NuGetPackageImportStamp>
+    <TypeScriptToolsVersion>4.0</TypeScriptToolsVersion>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -193,12 +195,14 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="Areas\Admin\AdminAreaRegistration.cs" />
+    <Compile Include="Areas\Admin\Controllers\ContactController.cs" />
     <Compile Include="Areas\Admin\Controllers\ContentCategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\ContentController.cs" />
     <Compile Include="Areas\Admin\Controllers\FounderController.cs" />
     <Compile Include="Areas\Admin\Controllers\HomeController.cs" />
     <Compile Include="Areas\Admin\Controllers\InfoController.cs" />
     <Compile Include="Areas\Admin\Controllers\LoginController.cs" />
+    <Compile Include="Areas\Admin\Controllers\MoreImageController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductCategoryController.cs" />
     <Compile Include="Areas\Admin\Controllers\ProductController.cs" />
     <Compile Include="Areas\Admin\Controllers\RatingController.cs" />
@@ -208,17 +212,19 @@
     <Compile Include="Common\Constant.cs" />
     <Compile Include="Common\Encryption.cs" />
     <Compile Include="Common\UserLogin.cs" />
+    <Compile Include="Controllers\ContactController.cs" />
     <Compile Include="Controllers\InfoController.cs" />
     <Compile Include="Controllers\ContentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RatingController.cs" />
     <Compile Include="Controllers\TeamController.cs" />
-    <Compile Include="DAO\ContentCategoryDAO.cs" />
     <Compile Include="Controllers\ProductController.cs" />
+    <Compile Include="DAO\ContactDAO.cs" />
     <Compile Include="DAO\ContentCategoryDAO.cs" />
     <Compile Include="DAO\ContentDAO.cs" />
     <Compile Include="DAO\FounderDAO.cs" />
     <Compile Include="DAO\InfoDAO.cs" />
+    <Compile Include="DAO\MoreImageDAO.cs" />
     <Compile Include="DAO\ProductCategoryDAO.cs" />
     <Compile Include="DAO\ProductDAO.cs" />
     <Compile Include="DAO\RatingDAO.cs" />
@@ -240,6 +246,10 @@
     <Compile Include="Migrations\202107251151477_abcde.Designer.cs">
       <DependentUpon>202107251151477_abcde.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202108011334144_noimg.cs" />
+    <Compile Include="Migrations\202108011334144_noimg.Designer.cs">
+      <DependentUpon>202108011334144_noimg.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ContentCategory.cs" />
     <Compile Include="Models\Contact.cs" />
@@ -257,7 +267,7 @@
     <Compile Include="Startup.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="assets\img\info\about-1-570x350.jpg" />
+    <Content Include="assets\img\xe-tai-thaco.jpg" />
     <Content Include="assets\admin\css\fontawesome.css" />
     <Content Include="assets\admin\css\owl.css" />
     <Content Include="assets\admin\css\sb-admin-2.css" />
@@ -270,7 +280,6 @@
     <Content Include="assets\home\css\style.css" />
     <Content Include="assets\home\fonts\flexslider-icon.svg" />
     <Content Include="assets\home\fonts\fontawesome-webfont.svg" />
-    <Content Include="assets\home\images\about-1-570x350.jpg" />
     <Content Include="assets\home\images\Aboutus.jpg" />
     <Content Include="assets\home\images\blog-1-370x270.jpg" />
     <Content Include="assets\home\images\blog-2-370x270.jpg" />
@@ -306,7 +315,6 @@
     <Content Include="assets\home\images\team_04.jpg" />
     <Content Include="assets\home\images\team_05.jpg" />
     <Content Include="assets\home\images\team_06.jpg" />
-    <Content Include="assets\home\images\vhh1.jpg" />
     <Content Include="assets\admin\img\undraw_posting_photo.svg" />
     <Content Include="assets\admin\img\undraw_profile.svg" />
     <Content Include="assets\admin\img\undraw_profile_1.svg" />
@@ -326,12 +334,6 @@
     <Content Include="assets\home\vendor\jquery\jquery.slim.js" />
     <Content Include="assets\home\vendor\jquery\jquery.slim.min.js" />
     <Content Include="assets\img\header\banner.png" />
-    <Content Include="assets\img\undraw_posting_photo.svg" />
-    <Content Include="assets\img\undraw_profile.svg" />
-    <Content Include="assets\img\undraw_profile_1.svg" />
-    <Content Include="assets\img\undraw_profile_2.svg" />
-    <Content Include="assets\img\undraw_profile_3.svg" />
-    <Content Include="assets\img\undraw_rocket.svg" />
     <Content Include="Content\css\StyleSheet1.css" />
     <Content Include="Content\images\about-1-570x350.jpg" />
     <Content Include="Content\images\anh-showroom1.jpeg" />
@@ -2021,7 +2023,6 @@
     <Content Include="assets\home\js\custom.js" />
     <Content Include="assets\home\js\owl.js" />
     <Content Include="assets\home\vendor\bootstrap\css\bootstrap.css" />
-    <Content Include="assets\home\vendor\bootstrap\css\bootstrap.min.css" />
     <Content Include="assets\home\vendor\bootstrap\js\bootstrap.bundle.js" />
     <Content Include="assets\home\vendor\bootstrap\js\bootstrap.bundle.min.js" />
     <Content Include="assets\home\vendor\bootstrap\js\bootstrap.js" />
@@ -2263,6 +2264,9 @@
     <Content Include="assets\home\vendor\jquery\jquery.slim.min.map" />
     <Content Include="Areas\Admin\Views\Product\Create.cshtml" />
     <Content Include="Areas\Admin\Views\Product\Edit.cshtml" />
+    <Content Include="Areas\Admin\Views\Contact\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\MoreImage\Index.cshtml" />
+    <Content Include="Areas\Admin\Views\MoreImage\Create.cshtml" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -2294,12 +2298,16 @@
     <Content Include="Views\Product\Detail.cshtml" />
     <Content Include="Views\Product\ListAll.cshtml" />
     <Content Include="Views\Product\ListByCatId.cshtml" />
+    <Content Include="Views\Contact\Contact.cshtml" />
+    <Content Include="Views\Product\ListHotProduct.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="Areas\Admin\Views\Session\" />
     <Folder Include="assets\admin\img\rating\" />
     <Folder Include="assets\img\founder\" />
+    <Folder Include="assets\img\info\" />
+    <Folder Include="assets\img\moreimages\" />
     <Folder Include="assets\img\product\" />
     <Folder Include="assets\img\rating\" />
     <Folder Include="assets\img\slide\" />
@@ -2328,12 +2336,22 @@
     <EmbeddedResource Include="Migrations\202107251151477_abcde.resx">
       <DependentUpon>202107251151477_abcde.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108011334144_noimg.resx">
+      <DependentUpon>202108011334144_noimg.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <TypeScriptCompile Include="Scripts\typings\jquery\jquery.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
     <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
   </PropertyGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets" Condition="Exists('$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\TypeScript\Microsoft.TypeScript.targets')" />
   <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
   <Target Name="MvcBuildViews" AfterTargets="AfterBuild" Condition="'$(MvcBuildViews)'=='true'">

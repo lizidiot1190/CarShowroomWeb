@@ -1,9 +1,10 @@
 ﻿@model PagedList.IPagedList<Model.EF.ContentCategory>
 @using PagedList.Mvc;
 <link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+<script src="@Url.Content("~/Scripts/jquery.unobtrusive-ajax.js")" type="text/javascript"></script>
 @{ ViewBag.Title = "Quản lý danh mục content"; Layout = "~/Areas/Admin/Views/Shared/_Layouts.cshtml"; }
 @section header{
-Danh sách danh mục Content
+    Danh sách danh mục Content
 }
 <div class="card shadow mb-4">
     <div class="card-header py-3">
@@ -27,14 +28,17 @@ Danh sách danh mục Content
                     </tr>
                 </thead>
                 <tbody>
-                    @foreach(var item in Model)
+                    @foreach (var item in Model)
                     {
                         <tr id="row_@item.id">
                             <td>
                                 <a href="~/Admin/ContentCategory/Edit/@item.id">Sửa</a>
-                                @Ajax.ActionLink("Xóa","Delete",new { @id = item.id },new AjaxOptions
+                                @Ajax.ActionLink("Xóa", "Delete", new { @id = item.id }, new AjaxOptions
                            {
-                               Confirm="ban có chắc chắn xóa không?",OnComplete="$('row_"+@item.id+"').remove()",OnSuccess="windows.location.href='ContentCategory/Index'",HttpMethod="Delete"
+                               Confirm = "ban có chắc chắn xóa không?",
+                               OnComplete = "$('row_" + @item.id + "').remove()",
+                               OnSuccess = "window.location.reload()",
+                               HttpMethod = "Delete"
                            })
                             </td>
                             <td>@item.name</td>
@@ -48,10 +52,10 @@ Danh sách danh mục Content
                         </tr>
 
                     }
-                  
+
                 </tbody>
             </table>
-            @Html.PagedListPager(Model, page=>Url.Action("Index",new {page} ))
+            @Html.PagedListPager(Model, page => Url.Action("Index", new { page }))
         </div>
     </div>
 
