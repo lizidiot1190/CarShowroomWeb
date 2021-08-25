@@ -26,8 +26,6 @@ namespace CarShowroom.DAO
             string fileName = Path.GetFileNameWithoutExtension(entity.imageFile.FileName);
             string extension = Path.GetExtension(entity.imageFile.FileName);
             fileName = fileName + DateTime.Now.ToString("yymmssfff") + extension;
-            entity.image = "~/assets/img/" + fileName;
-            fileName = Path.Combine(HttpContext.Current.Server.MapPath("~/assets/img/"), fileName);
             entity.image = "~/assets/img/info/" + fileName;
             fileName = Path.Combine(HttpContext.Current.Server.MapPath("~/assets/img/info/"), fileName);
             entity.imageFile.SaveAs(fileName);

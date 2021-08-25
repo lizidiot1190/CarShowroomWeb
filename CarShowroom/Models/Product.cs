@@ -25,7 +25,7 @@
         [DisplayName("Loại xe")]
         public string loaiXe { get; set; }
         [StringLength(255)]
-        [DisplayName("Loại thùng")]
+        [DisplayName("Kích thước")]
         public string loaiThung { get; set; }
         [DisplayName("Tải trọng")]
         [StringLength(255)]
@@ -43,7 +43,7 @@
         [DisplayName("Loại hộp số")]
         public string hopSo { get; set; }
 
-        [StringLength(500)]
+        [StringLength(5000)]
         [DisplayName("Mô tả sản phẩm")]
         public string description { get; set; }
 

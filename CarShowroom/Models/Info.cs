@@ -15,12 +15,12 @@
         [StringLength(250)]
         [DisplayName("Tên thông tin")]
         public string name { get; set; }
-        [StringLength(250)]
         [NotMapped]
         public HttpPostedFileBase imageFile { get; set; }
+        [StringLength(250)]
         [DisplayName("Hình ảnh")]
         public string image { get; set; }
-        [Column(TypeName = "ntext")]
+        [MaxLength]
         [DisplayName("Mô tả nội dung")]
         public string content { get; set; }
         [DisplayName("Trạng thái")]

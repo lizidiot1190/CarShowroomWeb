@@ -21,7 +21,7 @@
         [DisplayName("Thẻ tiêu đề")]
         public string metaTitle { get; set; }
 
-        [StringLength(500)]
+        [MaxLength]
         [DisplayName("Nội dung")]
         public string description { get; set; }
 

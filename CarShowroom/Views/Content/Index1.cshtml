@@ -26,28 +26,46 @@
 
 @foreach (var item in Model)
 {
-    <div class="products">
-        <div class="container">
-            <div class="row">
-                <div class="col-md-8">
-                    <div class="row">
+    @*<div class="products">
+            <div class="container">
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="row">
 
-                        <div class="col-md-6">
-                            <div class="service-item">
-                                <a href="blog-details.html" class="services-item-image"><img src="@Url.Content(item.image)" /></a>
+                            <div class="col-md-6">
+                                <div class="service-item">
+                                    <a href="blog-details.html" class="services-item-image"><img src="@Url.Content(item.image)" /></a>
 
-                                <div class="down-content">
-                                    <h4><a href="blog-details.html">@item.name</a></h4>
+                                    <div class="down-content">
+                                        <h4><a>@item.name</a></h4>
 
-                                    <p style="margin: 0;"> @item.topHot &nbsp;&nbsp;
+                                        <p style="margin: 0;"> @item.topHot &nbsp;&nbsp;
+                                    </div>
                                 </div>
                             </div>
-                        </div>
 
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>*@
+
+    <div class="best-features about-features">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <div class="right-image-custom">
+                        <a href="#"><img src="@Url.Content(item.image)" /></a>
                     </div>
                 </div>
-
-
+                <div class="col-md-6">
+                    <div class="left-content">
+                        <h4>@item.name</h4>
+                        <p>@item.description</p>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

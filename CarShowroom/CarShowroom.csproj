@@ -250,6 +250,22 @@
     <Compile Include="Migrations\202108011334144_noimg.Designer.cs">
       <DependentUpon>202108011334144_noimg.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\202108241204443_500char.cs" />
+    <Compile Include="Migrations\202108241204443_500char.Designer.cs">
+      <DependentUpon>202108241204443_500char.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108241331211_up.cs" />
+    <Compile Include="Migrations\202108241331211_up.Designer.cs">
+      <DependentUpon>202108241331211_up.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108241344370_up1.cs" />
+    <Compile Include="Migrations\202108241344370_up1.Designer.cs">
+      <DependentUpon>202108241344370_up1.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\202108251004495_content500.cs" />
+    <Compile Include="Migrations\202108251004495_content500.Designer.cs">
+      <DependentUpon>202108251004495_content500.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\ContentCategory.cs" />
     <Compile Include="Models\Contact.cs" />
@@ -2338,6 +2354,18 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\202108011334144_noimg.resx">
       <DependentUpon>202108011334144_noimg.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108241204443_500char.resx">
+      <DependentUpon>202108241204443_500char.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108241331211_up.resx">
+      <DependentUpon>202108241331211_up.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108241344370_up1.resx">
+      <DependentUpon>202108241344370_up1.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\202108251004495_content500.resx">
+      <DependentUpon>202108251004495_content500.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
